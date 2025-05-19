@@ -11,8 +11,10 @@
   </head>
   <body>
     <style>body { overflow: hidden; }</style>
+
+    <!--Music Player Header-->
     <div class="header">
-      <img src="/images/azwLogo.png" style="padding-left: 2px;">
+      <button class='home-button' onClick="loadPage('home')"><img src="/images/azwLogo.png"></button>
       <button id='previous-track' class="music-controls"><img src="/images/play.png"></button>
       <button id='play-pause-track' class="music-controls"><img src="/images/play.png"></button>
       <button id='next-track' class="music-controls"><img src="/images/play.png"></button>
@@ -24,18 +26,42 @@
         <marquee id="time-together"></marquee>
       </div>
     </div>
-        
-    <div class='circle-container' position="relative">
-      <button class="btn1">ILY</button>
-      <button class="btn2">Gallery</button>
-      <button class="btn3">Music</button>
-      <button class="btn4">Blog</button>
-      <button class="btn5">Outfits</button>
+
+    <!--Main Content of page-->
+    <div id="main-content">
+      <!--page content is loaded here using loadPage()-->
     </div>
   </body>
 </html>
 
 <script>
+// Page Loading
+
+// Functions
+function loadPage(page) {
+  fetch(`${page}.html`)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('main-content').innerHTML = html;
+    });
+    if (push) {
+      history.pushState({ page: page }, "", `#${page}`);
+    }
+}
+
+// Listeners
+window.addEventListener('popstate', (event) => {
+  const state = event.state;
+  if (state && state.page) {
+    loadPage(state.page, false);
+  }
+});
+window.addEventListener('DOMContentLoaded', () => {
+  const initialPage = location.hash ? location.hash.substring(1) : 'home';
+  loadPage(initialPage, false);
+});
+
+
 // Music Player
 
 let isPlaying = true;
@@ -135,6 +161,7 @@ nextTrackButton.addEventListener('click', nextTrack);
 const timeTogether = document.getElementById('time-together');
 const startDate = new Date("August 10, 2024 01:00:00");
 
+// Functions
 function updateTimeTogether() {
   const now = new Date();
   let diff = now - startDate;
