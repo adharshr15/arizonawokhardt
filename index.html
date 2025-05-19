@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T+H</title>
+    <link href="/styles.css" rel="stylesheet" type="text/css" media="all">
+    <script src="https://kit.fontawesome.com/f936906ae0.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="header">
+      <img src="/images/azwLogo.png" style="padding-left: 2px;">
+      <button class="music-controls"><img src="/images/play.png"></button>
+      <button class="music-controls"><img src="/images/play.png"></button>
+      <button class="music-controls"><img src="/images/play.png"></button>
+      <div id="song-title-marquee" class="header-marquee">
+        <marquee id="song-title"></marquee>
+      </div>
+      <select id="playlist-select" class="header-marquee"></select>
+      <div id='time-together' class="header-marquee">
+        <marquee>1 Year, 0 Months, 0 Days Together</marquee>
+      </div>
+    </div>
+        
+    <div class='circle-container' position="relative">
+      <button class="btn1">ILY</button>
+      <button class="btn2">Gallery</button>
+      <button class="btn3">Music</button>
+      <button class="btn4">Blog</button>
+      <button class="btn5">Outfits</button>
+    </div>
+  </body>
+</html>
+
+<script>
+let playlists = {};
+let track_list = [];
+let track_index = 0;
+
+const playlistSelect = document.getElementById("playlist-select");
+const songTitle = document.getElementById("song-title");
+
+fetch("music.json")
+  .then(response => response.json())
+  .then(data => {
+    playlists = data;
+
+    for (let playlistName in playlists) {
+      const option = document.createElement("option");
+      option.value = playlistName;
+      option.textContent = playlistName;
+      playlistSelect.appendChild(option);
+    }
+
+    // Set default playlist and song title
+    const firstPlaylist = Object.keys(playlists)[0];
+    if (firstPlaylist) {
+      playlistSelect.value = firstPlaylist;
+      track_list = playlists[firstPlaylist];
+      track_index = 0;
+      songTitle.textContent = track_list[0].name;
+    }
+  });
+
+playlistSelect.addEventListener("change", function () {
+  const selected = this.value;
+  track_list = playlists[selected];
+  track_index = 0;
+  songTitle.textContent = track_list[0].name;
+  loadTrack(track_index);  // This should be part of your existing player
+});
+</script>
