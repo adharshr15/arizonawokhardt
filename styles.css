@@ -24,7 +24,7 @@
     box-shadow: 6px 6px 0 black;
     transform: skewX(-15deg);
     border-width: 1vh;
-    border-color: black;
+    border-color: rgb(199, 199, 199);
     border-top-left-radius: 14%;
     border-bottom-right-radius: 14%;
     border-top-right-radius: 6%;
@@ -90,10 +90,10 @@
 }
 #playlist-select {
     font-family: 'Press Start 2P', monospace;
-    padding-bottom: 6px;
+    padding-top: 2px;
     width: 200px; 
 }
-#time-together {
+#time-together-marquee {
     width: 500px;
     margin-left: auto;
 }

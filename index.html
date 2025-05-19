@@ -10,17 +10,18 @@
     <script src="https://kit.fontawesome.com/f936906ae0.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <style>body { overflow: hidden; }</style>
     <div class="header">
       <img src="/images/azwLogo.png" style="padding-left: 2px;">
-      <button class="music-controls"><img src="/images/play.png"></button>
-      <button class="music-controls"><img src="/images/play.png"></button>
-      <button class="music-controls"><img src="/images/play.png"></button>
+      <button id='previous-track' class="music-controls"><img src="/images/play.png"></button>
+      <button id='play-pause-track' class="music-controls"><img src="/images/play.png"></button>
+      <button id='next-track' class="music-controls"><img src="/images/play.png"></button>
       <div id="song-title-marquee" class="header-marquee">
         <marquee id="song-title"></marquee>
       </div>
       <select id="playlist-select" class="header-marquee"></select>
-      <div id='time-together' class="header-marquee">
-        <marquee>1 Year, 0 Months, 0 Days Together</marquee>
+      <div id='time-together-marquee' class="header-marquee">
+        <marquee id="time-together"></marquee>
       </div>
     </div>
         
@@ -35,12 +36,68 @@
 </html>
 
 <script>
+// Music Player
+
+let isPlaying = true;
+let currentSong = new Audio();
 let playlists = {};
 let track_list = [];
 let track_index = 0;
 
+// Variables
 const playlistSelect = document.getElementById("playlist-select");
 const songTitle = document.getElementById("song-title");
+const prevTrackButton = document.getElementById("previous-track");
+const playPauseTrackButton = document.getElementById("play-pause-track");
+const nextTrackButton = document.getElementById("next-track");
+
+// Functions
+function loadTrack(index) {
+  if (track_list.length === 0) return; 
+
+  currentSong.src = track_list[index].path;
+  document.getElementById('song-title').textContent = track_list[index].name;
+  currentSong.load();
+}
+
+function playPauseTrack() {
+  if (isPlaying) {
+    currentSong.pause();
+    isPlaying = !isPlaying;
+  } else {
+    currentSong.play();
+    isPlaying = !isPlaying;
+  }
+}
+
+function nextTrack() {
+  if (track_index < track_list.length - 1) {
+    track_index++;
+  } else {
+    track_index = 0;
+  }
+  loadTrack(track_index);
+  currentSong.play();
+  isPlaying = true;
+}
+
+function previousTrack() {
+  if (track_index > 0) {
+    track_index--;
+  } 
+  loadTrack(track_index);
+  currentSong.play();
+  isPlaying = true;
+}
+
+function changePlaylist() {
+  const selected = playlistSelect.value;
+  track_list = playlists[selected];
+  track_index = 0;
+  songTitle.textContent = track_list[0].name;
+  loadTrack(track_index);
+}
+
 
 fetch("music.json")
   .then(response => response.json())
@@ -64,11 +121,45 @@ fetch("music.json")
     }
   });
 
-playlistSelect.addEventListener("change", function () {
-  const selected = this.value;
-  track_list = playlists[selected];
-  track_index = 0;
-  songTitle.textContent = track_list[0].name;
-  loadTrack(track_index);  // This should be part of your existing player
-});
+// Listeners
+playlistSelect.addEventListener("change", changePlaylist);
+prevTrackButton.addEventListener('click', previousTrack);
+playPauseTrackButton.addEventListener('click', playPauseTrack);
+nextTrackButton.addEventListener('click', nextTrack);
+
+// Time Together
+
+// Variables
+const timeTogether = document.getElementById('time-together');
+const startDate = new Date("August 10, 2024 01:00:00");
+
+function updateTimeTogether() {
+  const now = new Date();
+  let diff = now - startDate;
+
+  let seconds = Math.floor(diff / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+
+  const years = Math.floor(days / 365.25);
+  const months = Math.floor((days % 365.25) / 30.44);
+  const remDays = Math.floor((days % 365.25) % 30.44);
+
+  const remHours = hours % 24;
+  const remMinutes = minutes % 60;
+  const remSeconds = seconds % 60;
+
+  timeTogether.textContent = 
+    `${years} Year${years !== 1 ? 's' : ''}, ` +
+    `${months} Month${months !== 1 ? 's' : ''}, ` +
+    `${remDays} Day${remDays !== 1 ? 's' : ''}, ` +
+    `${remHours} Hour${remHours !== 1 ? 's' : ''}, ` +
+    `${remMinutes} Minute${remMinutes !== 1 ? 's' : ''}, ` +
+    `${remSeconds} Second${remSeconds !== 1 ? 's' : ''} Together`;
+}
+
+updateTimeTogether();
+
+setInterval(updateTimeTogether, 1000);
 </script>
