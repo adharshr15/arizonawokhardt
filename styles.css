@@ -16,11 +16,11 @@
 
 .circle-container button {
     display: flex;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Press Start 2P', monospace;
     padding: 11px 33px;
     font-size: 25px;
     color: black;
-    background: linear-gradient(180deg, gray 0%, white 45%, gray 47%, gray 60%, lightgray 100%);
+    background: linear-gradient(180deg, grey 0%, white 45%, grey 47%, white 60%, pink 100%);
     box-shadow: 6px 6px 0 black;
     transform: skewX(-15deg);
     border-width: 1vh;
@@ -50,8 +50,7 @@
 
 
 .header{ 
-    font-family: 'basiic';
-    font-weight:bold;
+    font-family: 'Press Start 2P', monospace;
     height:35px;
     width:100%;
     left:0;
@@ -59,11 +58,11 @@
     position:fixed;
     margin-bottom:20px;  
     display:flex;
-    background: linear-gradient(180deg,lightgray 0%, white 45%, gray 47%, white 100%);
+    background: linear-gradient(180deg,lightgray 0%, white 45%, gray 47%, pink 100%);
     border:ridge 2px white; /* border around player */
     outline: solid 2px black;  
     box-shadow: inset 10px 0px 6px -10px gray, inset -13px 0px 6px -10px gray, inset 0px 10px 6px -10px #ffffff, inset 0px -13px 6px -10px white;
-    /* filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0.5px gray) drop-shadow(0.5px 0.5px 1px gray) drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0 black); */
+    filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0.5px gray) drop-shadow(0.5px 0.5px 1px gray) drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0 black); 
 }
 .music-controls {
     all: unset;
@@ -79,16 +78,18 @@
     margin-top: 4px;
     margin-right: 5px;
     font-size: 18px;
-    background: white;
+    background: black;
+    color: pink;
+    font-weight: normal !important;
     border: gray inset 1px;
     border-radius: 6px;
-    box-shadow: inset 13px 0px 6px -10px rgb(66 66 66 / 20%), inset -13px 0px 6px -10px rgb(66 66 66 / 56%), inset 0px 13px 6px -10px #ffffff, inset 0px -13px 6px -10px rgb(66 66 66 / 38%);
+    /*box-shadow: inset 13px 0px 6px -10px rgb(66 66 66 / 20%), inset -13px 0px 6px -10px rgb(66 66 66 / 56%), inset 0px 13px 6px -10px #ffffff, inset 0px -13px 6px -10px rgb(66 66 66 / 38%); */
 }
 #song-title {
     width: 300px;
 }
 #playlist-select {
-    font-family: 'basiic', bold;
+    font-family: 'Press Start 2P', monospace;
     padding-bottom: 6px;
     width: 200px; 
 }
