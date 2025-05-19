@@ -3,12 +3,12 @@
         { "name": "Alison - Slowdive", "path": "https://files.catbox.moe/oachk7.wav" }, 
         { "name": "The Coffin Was So Light I Thought It Might Float Away - Eiafuawn", "path": "https://files.catbox.moe/ho6g5k.wav" }, 
         { "name": "Mystery Hole - Medicine", "path": "https://files.catbox.moe/qfx90l.wav" },
-        { "name": "Do You Ever Feel This Way - Starflyer 59", "path": "https://files.catbox.moe/loljvz.wav" },
+        { "name": "Do You Ever Feel This Way - Starflyer 59", "path": "https://files.catbox.moe/t6lamt.wav" },
         { "name": "lollipop - Astrobrite", "path": "https://files.catbox.moe/eja52o.wav" },
         { "name": "Dean's Dream - The Dead Milkmen", "path": "https://files.catbox.moe/kc7r4f.wav" },
         { "name": "Hey, Hey Girl - Rocketship", "path": "https://files.catbox.moe/zmjgz6.wav" },
         { "name": "For Tammy Rae - Bikini Kill", "path": "https://files.catbox.moe/qtmye3.wav" },
-        { "name": "Ginger - Lilys", "path": "https://files.catbox.moe/qtmye3.wav" },
+        { "name": "Ginger - Lilys", "path": "https://files.catbox.moe/1psman.wav" },
         { "name": "Telepathic Love - Wipers", "path": "https://files.catbox.moe/g2h1qk.wav" },
         { "name": "Polly - Moose", "path": "https://files.catbox.moe/ytopwg.wav" },
         { "name": "Eavesdrop - Mad Planets", "path": "https://files.catbox.moe/t0a5yn.wav" },
@@ -21,10 +21,10 @@
         { "name": "Here, There And Everywhere - The Beatles", "path": "https://files.catbox.moe/x4phlx.wav" },
         { "name": "Kick The Tragedy - Drop Nineteens", "path": "https://files.catbox.moe/yg5m2g.wav" }
     ],
-    "Mixtape 1: For My Crush - T" : [
+    "Mixtape 0 - T" : [
         { "name": "Stuck On You - Failure", "path": "https://files.catbox.moe/example1.mp3" }
     ],
-    "Mixtape 2 - T" : [
+    "Mixtape 1: 4 My Crush - T" : [
         { "name": "Alison - Slowdive", "path": "https://files.catbox.moe/example1.mp3" }
     ]
 }

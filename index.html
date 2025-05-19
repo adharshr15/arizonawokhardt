@@ -56,7 +56,7 @@ function loadTrack(index) {
   if (track_list.length === 0) return; 
 
   currentSong.src = track_list[index].path;
-  document.getElementById('song-title').textContent = track_list[index].name;
+  document.getElementById('song-title').textContent = String(index + 1) + ". " + track_list[index].name;
   currentSong.load();
 }
 
@@ -117,7 +117,9 @@ fetch("music.json")
       playlistSelect.value = firstPlaylist;
       track_list = playlists[firstPlaylist];
       track_index = 0;
-      songTitle.textContent = track_list[0].name;
+      songTitle.textContent = String(track_index + 1) + ". " + track_list[0].name;
+      loadTrack(track_index);
+      isPlaying = false;
     }
   });
 

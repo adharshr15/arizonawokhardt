@@ -32,6 +32,17 @@
     cursor: pointer;
     filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0.5px gray) drop-shadow(0.5px 0.5px 1px gray) drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0 black);
 }
+.circle-container button:hover {
+    box-shadow: 4px 4px 0 black;
+    margin-left: 2px;
+    margin-top: 2px;
+}
+.circle-containter button:active {
+    box-shadow: none;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
 .circle-container .btn1 { 
     transform: rotate(0deg) translateX(-350px) translateY(-350px) skewX(-15deg);
 }
