@@ -159,6 +159,7 @@
     filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0.5px gray) drop-shadow(0.5px 0.5px 1px gray) drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0 black);
 }
 .music-frame .inner-right {
+    position: relative;
     margin-left: 25px;
     width: 400px;
     padding: 20px 33px;
@@ -179,6 +180,7 @@
     filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0.5px gray) drop-shadow(0.5px 0.5px 1px gray) drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0 black);
 }
 .music-frame .inner-left {
+    position: relative;
     margin-left: 0px;
     margin-bottom: 5px;
     width: 400px;
@@ -197,4 +199,10 @@
     font-family: 'Press Start 2P', monospace;
     border-radius: 14% 6% 14% 6%;
     filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0.5px gray) drop-shadow(0.5px 0.5px 1px gray) drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0 black);
+}
+.music-frame .date {
+    position: absolute;
+    color: pink;
+    bottom: 8px;
+    left: 40px;
 }

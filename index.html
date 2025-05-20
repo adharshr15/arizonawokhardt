@@ -41,19 +41,31 @@ function loadPage(page) {
     .then(res => res.text())
     .then(html => {
       document.getElementById('main-content').innerHTML = html;
+      // load music.json file for music page
+      if (page === 'music') {
+        fetch("assets/music.json")
+          .then(res => {
+            if (!res.ok) throw new Error('Failed to fetch music.json');
+            return res.json();
+          })
+          .then(data => {
+            musicData = data;
+            renderFrames(currentPage);
+          })
+          .catch(err => {
+            console.error('Error loading music.json:', err);
+          });
+      }
     });
-    if (push) {
-      history.pushState({ page: page }, "", `#${page}`);
-    }
 }
 
 // Listeners
-window.addEventListener('popstate', (event) => {
-  const state = event.state;
-  if (state && state.page) {
-    loadPage(state.page, false);
-  }
-});
+// window.addEventListener('popstate', (event) => {
+//   const state = event.state;
+//   if (state && state.page) {
+//     loadPage(state.page, false);
+//   }
+// });
 // sets default page
 window.addEventListener('DOMContentLoaded', () => {
   const initialPage = location.hash ? location.hash.substring(1) : 'music';
@@ -193,4 +205,52 @@ updateTimeTogether();
 
 // Update every second
 setInterval(updateTimeTogether, 1000);
+
+// Music
+// Variables
+let musicData = [];
+let currentPage = 1;
+let itemsPerPage = 6;
+
+// Functions
+function renderFrames(page) {
+    const container = document.getElementById('music-container');
+    container.innerHTML = '';
+
+    const start = (page - 1) * itemsPerPage;
+    const end = page * itemsPerPage;
+    const pageItems = musicData.slice(start, end);
+
+    // create the <=6 frames for the current page
+    pageItems.forEach((track, index) => {
+        const globalIndex = start + index;
+
+        const frame = document.createElement('div');
+        frame.className = 'music-frame';
+
+        // if track index is even, make left frame
+        if (globalIndex % 2 == 0) {
+            frame.innerHTML = `
+                <img id='cover-art-left' class='cover-art-left' src="${track.art}">
+                <div id='inner-right' class="inner-right">
+                    <h3>${track.song}</h3>
+                    <p class='description'>${track.description}</p>
+                    <p class='date'>${track.date}</p>
+                </div>
+            `;
+        } else {
+            frame.innerHTML = `
+                <div id='inner-left' class="inner-left">
+                    <h3>${track.song}</h3>
+                    <p class='description'>${track.description}</p>
+                    <p class='date'>${track.date}</p>
+                </div>
+                <img id='cover-art-right' class='cover-art-right' src="${track.art}">
+            `;
+        }
+
+        container.appendChild(frame);
+    });
+}
+
 </script>
