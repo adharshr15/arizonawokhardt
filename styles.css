@@ -73,6 +73,26 @@
     filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0.5px gray) drop-shadow(0.5px 0.5px 1px gray) drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0 black);
 }
 
+/* TOGGLE BUTTONS */
+.toggle-button {
+    width: 40px;
+    height: 30px;
+    margin-right: -4px;
+    transform: skewX(-15deg);
+    border-width: 5px;
+    background: linear-gradient(180deg, grey 0%, white 45%, grey 47%, white 60%, grey 100%);
+    border-color: rgb(199, 199, 199);
+    font-size: 16px;
+    cursor: pointer;
+    filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0.5px gray) drop-shadow(0.5px 0.5px 1px gray) drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0 black);
+}
+.right {
+    border-radius: 0 100px 100px 0;
+}
+.left {
+    border-radius: 100px 0 0 100px;
+}
+
 /* HOME */
 .circle-container {
     position: relative;
@@ -120,6 +140,11 @@
 }
 
 /* GALLERY */
+.gallery-settings-container {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 1100px;
+}
 .gallery-container-grid {
     display: flex;
     flex-wrap: wrap;
@@ -127,7 +152,7 @@
     border-width: 1px;
     margin-left: 150px;
     margin-right: 100px;
-    margin-top: 50px;
+    margin-bottom: 50px;
     gap: 50px;
 }
 .gallery-frame-small {
@@ -161,7 +186,6 @@
     border-width: 1px;
     margin-left: 150px;
     margin-right: 150px;
-    margin-top: 50px;
 }
 .gallery-frame-big {
     position: relative;
