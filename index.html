@@ -12,10 +12,10 @@
   <body>
     <!--Music Player Header-->
     <div class="header">
-      <button class='home-button' onClick="loadPage('home')"><img src="/images/azwLogo.png"></button>
-      <button id='previous-track' class="music-controls"><img src="/images/play.png"></button>
-      <button id='play-pause-track' class="music-controls"><img src="/images/play.png"></button>
-      <button id='next-track' class="music-controls"><img src="/images/play.png"></button>
+      <button class='home-button' onClick="loadPage('home')"><img src="/assets/images/azwLogo.png"></button>
+      <button id='previous-track' class="music-controls"><img src="/assets/images/play.png"></button>
+      <button id='play-pause-track' class="music-controls"><img src="/assets/images/play.png"></button>
+      <button id='next-track' class="music-controls"><img src="/assets/images/play.png"></button>
       <div id="song-title-marquee" class="header-marquee">
         <marquee id="song-title"></marquee>
       </div>
@@ -33,7 +33,7 @@
 </html>
 
 <script>
-// Page Loading
+// PAGE LOADING
 
 // Functions
 function loadPage(page) {
@@ -50,7 +50,7 @@ function loadPage(page) {
           })
           .then(data => {
             musicData = data;
-            renderFrames(currentPage);
+            renderMusicFrames(currentMusicPage);
           })
           .catch(err => {
             console.error('Error loading music.json:', err);
@@ -60,20 +60,13 @@ function loadPage(page) {
 }
 
 // Listeners
-// window.addEventListener('popstate', (event) => {
-//   const state = event.state;
-//   if (state && state.page) {
-//     loadPage(state.page, false);
-//   }
-// });
-// sets default page
 window.addEventListener('DOMContentLoaded', () => {
-  const initialPage = location.hash ? location.hash.substring(1) : 'music';
+  const initialPage = location.hash ? location.hash.substring(1) : 'gallery';
   loadPage(initialPage, false);
 });
 
 
-// Music Player
+// MUSIC PLAYER
 
 let isPlaying = true;
 let currentSong = new Audio();
@@ -168,7 +161,7 @@ playPauseTrackButton.addEventListener('click', playPauseTrack);
 nextTrackButton.addEventListener('click', nextTrack);
 currentSong.addEventListener('ended', nextTrack);
 
-// Time Together
+// TIME TOGETHER
 
 // Variables
 const timeTogether = document.getElementById('time-together');
@@ -206,19 +199,47 @@ updateTimeTogether();
 // Update every second
 setInterval(updateTimeTogether, 1000);
 
-// Music
+// GALLERY
+
 // Variables
-let musicData = [];
-let currentPage = 1;
-let itemsPerPage = 6;
+let galleryData = [];
+let currentGalleryPage = 1;
+let galleryItemsPerPage = 10;
 
 // Functions
-function renderFrames(page) {
+function renderGalleryFrames(page) {
+  const container = document.getElementById('gallery-container');
+  container.innerHTML = '';
+
+  const start = (page - 1) * galleryItemsPerPage;
+  const end = page * galleryItemsPerPage;
+  const pageItems = galleryData.slice(start, end);
+
+  // create <=10 gallery frames for the current page
+  pageItems.forEach((track, index) => {
+    const globalIndex = start + index;
+
+    const frame = document.createElement('div');
+    frame.className = 'gallery-frame-small';
+
+
+  })
+}
+
+// MUSIC
+
+// Variables
+let musicData = [];
+let currentMusicPage = 1;
+let musicItemsPerPage = 6;
+
+// Functions
+function renderMusicFrames(page) {
     const container = document.getElementById('music-container');
     container.innerHTML = '';
 
-    const start = (page - 1) * itemsPerPage;
-    const end = page * itemsPerPage;
+    const start = (page - 1) * musicItemsPerPage;
+    const end = page * musicItemsPerPage;
     const pageItems = musicData.slice(start, end);
 
     // create the <=6 frames for the current page
@@ -226,7 +247,7 @@ function renderFrames(page) {
         const globalIndex = start + index;
 
         const frame = document.createElement('div');
-        frame.className = 'music-frame';
+        frame.className = 'pink-metallic music-frame';
 
         // if track index is even, make left frame
         if (globalIndex % 2 == 0) {
@@ -252,5 +273,7 @@ function renderFrames(page) {
         container.appendChild(frame);
     });
 }
+
+
 
 </script>
