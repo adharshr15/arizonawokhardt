@@ -10,8 +10,6 @@
     <script src="https://kit.fontawesome.com/f936906ae0.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <style>body { overflow: hidden; }</style>
-
     <!--Music Player Header-->
     <div class="header">
       <button class='home-button' onClick="loadPage('home')"><img src="/images/azwLogo.png"></button>
@@ -56,8 +54,9 @@ window.addEventListener('popstate', (event) => {
     loadPage(state.page, false);
   }
 });
+// sets default page
 window.addEventListener('DOMContentLoaded', () => {
-  const initialPage = location.hash ? location.hash.substring(1) : 'home';
+  const initialPage = location.hash ? location.hash.substring(1) : 'music';
   loadPage(initialPage, false);
 });
 
@@ -104,6 +103,7 @@ function nextTrack() {
   }
   loadTrack(track_index);
   currentSong.play();
+  currentSong.
   isPlaying = true;
 }
 
@@ -125,7 +125,7 @@ function changePlaylist() {
 }
 
 
-fetch("music.json")
+fetch("/assets/mixtapes.json")
   .then(response => response.json())
   .then(data => {
     playlists = data;
@@ -154,6 +154,7 @@ playlistSelect.addEventListener("change", changePlaylist);
 prevTrackButton.addEventListener('click', previousTrack);
 playPauseTrackButton.addEventListener('click', playPauseTrack);
 nextTrackButton.addEventListener('click', nextTrack);
+currentSong.addEventListener('ended', nextTrack);
 
 // Time Together
 
@@ -190,5 +191,6 @@ function updateTimeTogether() {
 
 updateTimeTogether();
 
+// Update every second
 setInterval(updateTimeTogether, 1000);
 </script>
