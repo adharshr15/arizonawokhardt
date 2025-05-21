@@ -80,7 +80,7 @@
     line-height: 2.5vh;
     box-shadow: inset 4px 4px 10px grey; 
     border-radius: 14% 6% 14% 6%;
-    filter: drop-shadow(0 0.5px 0 grey) drop-shadow(0 0.5px 0.5px grey) drop-shadow(0.5px 0.5px 1px grey) drop-shadow(-0.5px 0.5px 0 white) drop-shadow(0 0.5px 0 white);
+    /* filter: drop-shadow(0 0.5px 0 grey) drop-shadow(0 0.5px 0.5px grey) drop-shadow(0.5px 0.5px 1px grey) drop-shadow(-0.5px 0.5px 0 white) drop-shadow(0 0.5px 0 white); */
 }
 .date {
     z-index: 999;
@@ -337,7 +337,7 @@
 .blog-container {
     display: flex;
     flex-direction: row;
-    gap: 70px;
+    gap: 50px;
     justify-content: center;
     font-family: 'Press Start 2P', monospace;
     margin-left: 200px;
@@ -351,13 +351,14 @@
 } 
 .blog-frame {
     position: relative;
-    width: 480px;
+    width: 440px;
     height: 550px;
 }
 .blog-text {
     position: relative;
     padding: 50px 30px 50px 30px;
     height: 450px;
+    width: 380px; 
     overflow-y: auto;
     scrollbar-width: none;      
     -ms-overflow-style: none;
