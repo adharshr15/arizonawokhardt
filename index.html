@@ -114,7 +114,7 @@ function loadPage(page) {
 
 // Listeners
 window.addEventListener('DOMContentLoaded', () => {
-  const initialPage = location.hash ? location.hash.substring(1) : 'blog';
+  const initialPage = location.hash ? location.hash.substring(1) : 'music';
   loadPage(initialPage, false);
 });
 
@@ -356,8 +356,10 @@ function renderGalleryFrames(content, view) {
     prevButton.addEventListener('click', prevGalleryGridPage);
     nextButton.addEventListener('click', nextGalleryGridPage);
 
+    const totalPages = Math.ceil(galleryData.length / galleryItemsPerPage);
+
     if (currentGalleryPage === 1) { prevButton.disabled = true; }
-    else if (currentGalleryPage === Math.floor(galleryData.length / galleryItemsPerPage) + 1) { nextButton.disabled = true; }
+    if (currentGalleryPage === totalPages) { nextButton.disabled = true; }
 
   // if big view, the current index is passed as content
   } else {
@@ -462,8 +464,10 @@ function renderBlogFrames(page) {
   prevButton.addEventListener('click', prevBlogPage);
   nextButton.addEventListener('click', nextBlogPage);
 
+  const totalPages = Math.ceil(blogData.length / blogItemsPerPage);
+
   if (currentBlogPage === 1) { prevButton.disabled = true; }
-  else if (currentBlogPage === Math.floor(blogData.length / blogItemsPerPage) + 1) { nextButton.disabled = true; }
+  if (currentBlogPage === totalPages) { nextButton.disabled = true; }
 }
 
 // MUSIC
@@ -471,18 +475,36 @@ function renderBlogFrames(page) {
 // Variables
 let musicData = [];
 let currentMusicPage = 1;
-let musicItemsPerPage = 6;
+let musicItemsPerPage = 10;
 
 // Functions
+function nextMusicPage() {
+  const musicLength = musicData.length;
+  const itemsOnNextPage = musicLength - (currentMusicPage * musicItemsPerPage); 
+  if (itemsOnNextPage > 0) {
+    currentMusicPage++;
+    renderMusicFrames(currentMusicPage); 
+  }
+}
+
+function prevMusicPage() {
+  if (currentMusicPage > 1) {
+    currentMusicPage--; 
+    renderMusicFrames(currentMusicPage);
+  }
+}
 function renderMusicFrames(page) {
     const container = document.getElementById('music-container');
     container.innerHTML = '';
+
+    const pageSelectContainer = document.getElementById('music-page-select-container');
+    pageSelectContainer.innerHTML = '';
 
     const start = (page - 1) * musicItemsPerPage;
     const end = page * musicItemsPerPage;
     const pageItems = musicData.slice(start, end);
 
-    // create the <=6 frames for the current page
+    // create the <=10 frames for the current page
     pageItems.forEach((track, index) => {
         const globalIndex = start + index;
 
@@ -512,6 +534,25 @@ function renderMusicFrames(page) {
 
         container.appendChild(frame);
     });
+
+    // add page select buttons
+    pageSelectContainer.innerHTML = `
+      <button id="music-prev-button" class="left toggle-button grid-prev-button"></button>
+      <button id="music-next-button" class="right toggle-button grid-next-button"></button>
+    `;
+
+    // add click listeners for buttons
+    const prevButton = document.getElementById('music-prev-button');
+    const nextButton = document.getElementById('music-next-button');
+
+    prevButton.addEventListener('click', prevMusicPage);
+    nextButton.addEventListener('click', nextMusicPage);
+
+    // disable buttons for first and last page
+    const totalPages = Math.ceil(musicData.length / musicItemsPerPage);
+
+    if (currentMusicPage === 1) { prevButton.disabled = true; }
+    if (currentMusicPage === totalPages) { nextButton.disabled = true; }
 }
 
 

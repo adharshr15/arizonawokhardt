@@ -296,6 +296,12 @@
     transform-origin: 0 0;
     display: flex;
 }
+.music-frame .left {
+
+}
+.music-frame .right {
+    
+}
 .music-frame .inner-right {
     position: relative;
     margin-left: 25px;
