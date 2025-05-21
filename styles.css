@@ -86,6 +86,11 @@
     cursor: pointer;
     filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0.5px gray) drop-shadow(0.5px 0.5px 1px gray) drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0 black);
 }
+.toggle-button:disabled {
+    cursor: default;
+    border-color: white;
+    background: linear-gradient(180deg, grey 0%, white 40%, grey 42%, white 55%, grey 100%);
+}
 .right {
     border-radius: 0 100px 100px 0;
 }
@@ -230,17 +235,44 @@
 }
 #gallery-grid-prev-button {
     transform: translateX(-400px) skewX(-15deg);
+    transition: margin 0.1s ease, box-shadow 0.1s ease, filter 0.2s ease;
 }
 #gallery-grid-next-button {
     transform: translateX(400px) skewX(-15deg);
+    transition: margin 0.1s ease, box-shadow 0.1s ease, filter 0.2s ease;
 }
 #gallery-big-prev-button {
     transform: translateY(-300px) translateX(-600px) skewX(-15deg);
+    transition: margin 0.1s ease, box-shadow 0.1s ease, filter 0.2s ease;
 }
 #gallery-big-next-button {
     transform: translateY(-300px) translateX(600px) skewX(-15deg);
+    transition: margin 0.1s ease, box-shadow 0.1s ease, filter 0.2s ease;
 }
 
+#gallery-grid-prev-button:hover,
+#gallery-grid-next-button:hover,
+#gallery-big-prev-button:hover,
+#gallery-big-next-button:hover {
+    transform: translate(1px, 1px, -15deg);
+    filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-1.5px 1.5px 0 white) drop-shadow(0 1.5px 0 white) drop-shadow(0 1.5px 0 white);
+    cursor: pointer;
+}
+
+#gallery-grid-prev-button:disabled,
+#gallery-grid-next-button:disabled,
+#gallery-big-prev-button:disabled,
+#gallery-big-next-button:disabled {
+    border-color: rgb(199, 199, 199);
+}
+
+#gallery-grid-prev-button:disabled:hover,
+#gallery-grid-next-button:disabled:hover,
+#gallery-big-prev-button:disabled:hover,
+#gallery-big-next-button:disabled:hover {
+    cursor: default;
+    filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0.5px gray) drop-shadow(0.5px 0.5px 1px gray) drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0 black);
+}
 
 /* MUSIC */
 .music-container {

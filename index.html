@@ -275,12 +275,17 @@ function prevGalleryBigPage() {
 function gridViewToggle() {
   if (!galleryViewGrid) {
     galleryViewGrid = true;
+    document.getElementById('grid-gallery-button').disabled = true;
+    document.getElementById('big-gallery-button').disabled = false;
     renderGalleryFrames(currentGalleryPage, 'grid');
+    
   }
 }
 function bigViewToggle() {
   if (galleryViewGrid) {
     galleryViewGrid = false;
+    document.getElementById('grid-gallery-button').disabled = false;
+    document.getElementById('big-gallery-button').disabled = true;
     renderGalleryFrames(currentGalleryIndex, 'big');
   }
 }
@@ -332,6 +337,9 @@ function renderGalleryFrames(content, view) {
     prevButton.addEventListener('click', prevGalleryGridPage);
     nextButton.addEventListener('click', nextGalleryGridPage);
 
+    if (currentGalleryPage === 1) { prevButton.disabled = true; }
+    else if (currentGalleryPage === Math.floor(galleryData.length / galleryItemsPerPage) + 1) { nextButton.disabled = true; }
+
   // if big view, the current index is passed as content
   } else {
     container.className = 'gallery-container-big';
@@ -362,6 +370,9 @@ function renderGalleryFrames(content, view) {
 
     prevButton.addEventListener('click', prevGalleryBigPage);
     nextButton.addEventListener('click', nextGalleryBigPage);
+
+    if (currentGalleryIndex === 0) { prevButton.disabled = true; }
+    if (currentGalleryIndex === galleryData.length - 1) { nextButton.disabled = true; }
   }
 }
 
