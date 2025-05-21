@@ -50,7 +50,11 @@ function loadPage(page) {
             return res.json();
           })
           .then(data => {
-            musicData = data;
+            musicData = data.sort((a, b) => {
+              const dateA = new Date(a.date);
+              const dateB = new Date(b.date);
+              return dateB - dateA; // for descending order (most recent first)
+            });
             renderMusicFrames(currentMusicPage);
           })
           .catch(err => {
