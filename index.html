@@ -66,7 +66,13 @@ function loadPage(page) {
             return res.json();
           })
           .then(data => {
-            galleryData = data;
+            // get and sort gallery json data by date
+            galleryData = data.sort((a, b) => {
+              const dateA = new Date(a.date);
+              const dateB = new Date(b.date);
+              return dateB - dateA; // for descending order (most recent first)
+            });
+
             // grid view by default
             galleryViewGrid = true;
             renderGalleryFrames(currentGalleryPage, 'grid');
@@ -81,12 +87,14 @@ function loadPage(page) {
             console.error('Error loading gallery.json:', err);
           })
       }
+
+      window.scrollTo(0, 0);
     });
 }
 
 // Listeners
 window.addEventListener('DOMContentLoaded', () => {
-  const initialPage = location.hash ? location.hash.substring(1) : 'home';
+  const initialPage = location.hash ? location.hash.substring(1) : 'gallery';
   loadPage(initialPage, false);
 });
 
@@ -231,9 +239,39 @@ let galleryData = [];
 let galleryViewGrid = true;
 let currentGalleryIndex = 0;
 let currentGalleryPage = 1;
-let galleryItemsPerPage = 10;
+let galleryItemsPerPage = 15;
 
 // Functions
+function nextGalleryGridPage() {
+  galleryLength = galleryData.length;
+  itemsOnNextPage = galleryLength - (currentGalleryPage * galleryItemsPerPage);
+  if (itemsOnNextPage > 0) {
+    currentGalleryPage++;
+    currentGalleryIndex += galleryItemsPerPage;
+    renderGalleryFrames(currentGalleryPage, 'grid');
+  }
+}
+function prevGalleryGridPage() {
+  if (currentGalleryPage > 1) {
+    currentGalleryPage--;
+    currentGalleryIndex -= galleryItemsPerPage;
+    renderGalleryFrames(currentGalleryPage, 'grid');
+  }
+}
+function nextGalleryBigPage() {
+  if (currentGalleryIndex < galleryData.length - 1) {
+    currentGalleryIndex++;
+    currentGalleryPage = Math.floor(currentGalleryIndex / galleryItemsPerPage) + 1;
+    renderGalleryFrames(currentGalleryIndex, 'big');
+  }
+}
+function prevGalleryBigPage() {
+  if (currentGalleryIndex > 0) {
+    currentGalleryIndex--;
+    currentGalleryPage = Math.floor(currentGalleryIndex / galleryItemsPerPage) + 1;
+    renderGalleryFrames(currentGalleryIndex, 'big');
+  }
+}
 function gridViewToggle() {
   if (!galleryViewGrid) {
     galleryViewGrid = true;
@@ -250,13 +288,17 @@ function renderGalleryFrames(content, view) {
   const container = document.getElementById('gallery-container');
   container.innerHTML = '';
 
-  // if grid view, the current page, which has <= 10 images, is passed as content
+  const pageSelectContainer = document.getElementById('gallery-page-select-container');
+  pageSelectContainer.innerHTML = '';
+
+  // if grid view, the current page, which has <= 15 images, is passed as content
   if (view === 'grid') {
     container.className = 'gallery-container-grid';
 
     const start = (content - 1) * galleryItemsPerPage;
     const end = content * galleryItemsPerPage;
     const pageItems = galleryData.slice(start, end);
+    currentGalleryIndex = start;
 
     pageItems.forEach((image, index) => {
       const globalIndex = start + index;
@@ -277,6 +319,19 @@ function renderGalleryFrames(content, view) {
       container.appendChild(frame);
     });
 
+    // add page select buttons
+    pageSelectContainer.innerHTML = `
+      <button id="gallery-grid-prev-button" class="left toggle-button"></button>
+      <button id="gallery-grid-next-button" class="right toggle-button"></button>
+    `;
+
+    // add click listeners for buttons
+    const prevButton = document.getElementById('gallery-grid-prev-button');
+    const nextButton = document.getElementById('gallery-grid-next-button');
+
+    prevButton.addEventListener('click', prevGalleryGridPage);
+    nextButton.addEventListener('click', nextGalleryGridPage);
+
   // if big view, the current index is passed as content
   } else {
     container.className = 'gallery-container-big';
@@ -287,14 +342,28 @@ function renderGalleryFrames(content, view) {
     frame.className = 'pink-metallic gallery-frame-big';
     frame.innerHTML = `
       <img class="gallery-image" src="${image.path}">
-      <div class='gallery-description'>${image.description}</div>
+      <div class='gallery-description'>
+        ${image.description}
+        <div class='date'>${image.date}</div>
+      </div>
     `;
 
     container.appendChild(frame);
+
+    // add page select buttons
+    pageSelectContainer.innerHTML = `
+      <button id="gallery-big-prev-button" class="left toggle-button"></button>
+      <button id="gallery-big-next-button" class="right toggle-button"></button>
+    `;
+
+    // add click listeners for buttons
+    const prevButton = document.getElementById('gallery-big-prev-button');
+    const nextButton = document.getElementById('gallery-big-next-button');
+
+    prevButton.addEventListener('click', prevGalleryBigPage);
+    nextButton.addEventListener('click', nextGalleryBigPage);
   }
 }
-
-
 
 // MUSIC
 
