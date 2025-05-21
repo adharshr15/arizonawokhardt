@@ -94,7 +94,7 @@ function loadPage(page) {
 
 // Listeners
 window.addEventListener('DOMContentLoaded', () => {
-  const initialPage = location.hash ? location.hash.substring(1) : 'gallery';
+  const initialPage = location.hash ? location.hash.substring(1) : 'blog';
   loadPage(initialPage, false);
 });
 
@@ -275,8 +275,6 @@ function prevGalleryBigPage() {
 function gridViewToggle() {
   if (!galleryViewGrid) {
     galleryViewGrid = true;
-    document.getElementById('grid-gallery-button').disabled = true;
-    document.getElementById('big-gallery-button').disabled = false;
     renderGalleryFrames(currentGalleryPage, 'grid');
     
   }
@@ -284,8 +282,6 @@ function gridViewToggle() {
 function bigViewToggle() {
   if (galleryViewGrid) {
     galleryViewGrid = false;
-    document.getElementById('grid-gallery-button').disabled = false;
-    document.getElementById('big-gallery-button').disabled = true;
     renderGalleryFrames(currentGalleryIndex, 'big');
   }
 }
@@ -298,6 +294,9 @@ function renderGalleryFrames(content, view) {
 
   // if grid view, the current page, which has <= 15 images, is passed as content
   if (view === 'grid') {
+    document.getElementById('grid-gallery-button').disabled = true;
+    document.getElementById('big-gallery-button').disabled = false;
+
     container.className = 'gallery-container-grid';
 
     const start = (content - 1) * galleryItemsPerPage;
@@ -326,8 +325,8 @@ function renderGalleryFrames(content, view) {
 
     // add page select buttons
     pageSelectContainer.innerHTML = `
-      <button id="gallery-grid-prev-button" class="left toggle-button"></button>
-      <button id="gallery-grid-next-button" class="right toggle-button"></button>
+      <button id="gallery-grid-prev-button" class="left toggle-button grid-prev-button"></button>
+      <button id="gallery-grid-next-button" class="right toggle-button grid-next-button"></button>
     `;
 
     // add click listeners for buttons
@@ -342,6 +341,9 @@ function renderGalleryFrames(content, view) {
 
   // if big view, the current index is passed as content
   } else {
+    document.getElementById('grid-gallery-button').disabled = false;
+    document.getElementById('big-gallery-button').disabled = true;
+
     container.className = 'gallery-container-big';
     
     const image = galleryData[content];
@@ -350,7 +352,7 @@ function renderGalleryFrames(content, view) {
     frame.className = 'pink-metallic gallery-frame-big';
     frame.innerHTML = `
       <img class="gallery-image" src="${image.path}">
-      <div class='gallery-description'>
+      <div class='inner-text gallery-description'>
         ${image.description}
         <div class='date'>${image.date}</div>
       </div>
@@ -360,8 +362,8 @@ function renderGalleryFrames(content, view) {
 
     // add page select buttons
     pageSelectContainer.innerHTML = `
-      <button id="gallery-big-prev-button" class="left toggle-button"></button>
-      <button id="gallery-big-next-button" class="right toggle-button"></button>
+      <button id="gallery-big-prev-button" class="left toggle-button big-prev-button"></button>
+      <button id="gallery-big-next-button" class="right toggle-button big-next-button"></button>
     `;
 
     // add click listeners for buttons
@@ -403,15 +405,15 @@ function renderMusicFrames(page) {
         if (globalIndex % 2 == 0) {
             frame.innerHTML = `
                 <img id='cover-art-left' class='cover-art-left' src="${track.art}">
-                <div id='inner-right' class="inner-right">
+                <div id='inner-right' class="inner-text inner-right">
                     <h3>${track.song}</h3>
-                    <p class='description'>${track.description}</p>
                     <p class='date'>${track.date}</p>
+                    <p class='description'>${track.description}</p>
                 </div>
             `;
         } else {
             frame.innerHTML = `
-                <div id='inner-left' class="inner-left">
+                <div id='inner-left' class="inner-text inner-left">
                     <h3>${track.song}</h3>
                     <p class='description'>${track.description}</p>
                     <p class='date'>${track.date}</p>
