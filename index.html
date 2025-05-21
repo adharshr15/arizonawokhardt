@@ -24,6 +24,7 @@
         <marquee id="time-together"></marquee>
       </div>
     </div>
+    
 
     <!--Main Content of page-->
     <div id="main-content">
@@ -56,12 +57,36 @@ function loadPage(page) {
             console.error('Error loading music.json:', err);
           });
       }
+
+      // load gallery.json file for gallery page
+      if (page === 'gallery') {
+        fetch('/assets/gallery.json')
+          .then(res => {
+            if (!res.ok) throw new Error('Faild to fetch gallery.json');
+            return res.json();
+          })
+          .then(data => {
+            galleryData = data;
+            // grid view by default
+            galleryViewGrid = true;
+            renderGalleryFrames(currentGalleryPage, 'grid');
+
+            const gridGalleryButton = document.getElementById('grid-gallery-button');
+            const bigGalleryButton = document.getElementById('big-gallery-button');
+
+            gridGalleryButton.addEventListener('click', gridViewToggle);
+            bigGalleryButton.addEventListener('click', bigViewToggle);
+          })
+          .catch(err => {
+            console.error('Error loading gallery.json:', err);
+          })
+      }
     });
 }
 
 // Listeners
 window.addEventListener('DOMContentLoaded', () => {
-  const initialPage = location.hash ? location.hash.substring(1) : 'gallery';
+  const initialPage = location.hash ? location.hash.substring(1) : 'home';
   loadPage(initialPage, false);
 });
 
@@ -203,28 +228,73 @@ setInterval(updateTimeTogether, 1000);
 
 // Variables
 let galleryData = [];
+let galleryViewGrid = true;
+let currentGalleryIndex = 0;
 let currentGalleryPage = 1;
 let galleryItemsPerPage = 10;
 
 // Functions
-function renderGalleryFrames(page) {
+function gridViewToggle() {
+  if (!galleryViewGrid) {
+    galleryViewGrid = true;
+    renderGalleryFrames(currentGalleryPage, 'grid');
+  }
+}
+function bigViewToggle() {
+  if (galleryViewGrid) {
+    galleryViewGrid = false;
+    renderGalleryFrames(currentGalleryIndex, 'big');
+  }
+}
+function renderGalleryFrames(content, view) {
   const container = document.getElementById('gallery-container');
   container.innerHTML = '';
 
-  const start = (page - 1) * galleryItemsPerPage;
-  const end = page * galleryItemsPerPage;
-  const pageItems = galleryData.slice(start, end);
+  // if grid view, the current page, which has <= 10 images, is passed as content
+  if (view === 'grid') {
+    container.className = 'gallery-container-grid';
 
-  // create <=10 gallery frames for the current page
-  pageItems.forEach((track, index) => {
-    const globalIndex = start + index;
+    const start = (content - 1) * galleryItemsPerPage;
+    const end = content * galleryItemsPerPage;
+    const pageItems = galleryData.slice(start, end);
+
+    pageItems.forEach((image, index) => {
+      const globalIndex = start + index;
+
+      const frame = document.createElement('div');
+      frame.className = 'pink-metallic gallery-frame-small';
+      frame.innerHTML = `
+        <img class="gallery-image" src="${image.path}">
+      `;
+      frame.dataset.index = globalIndex;
+
+      // Add click listener to switch to big view
+      frame.addEventListener('click', () => {
+        currentGalleryIndex = globalIndex;
+        bigViewToggle();
+      });
+
+      container.appendChild(frame);
+    });
+
+  // if big view, the current index is passed as content
+  } else {
+    container.className = 'gallery-container-big';
+    
+    const image = galleryData[content];
 
     const frame = document.createElement('div');
-    frame.className = 'gallery-frame-small';
+    frame.className = 'pink-metallic gallery-frame-big';
+    frame.innerHTML = `
+      <img class="gallery-image" src="${image.path}">
+      <div class='gallery-description'>${image.description}</div>
+    `;
 
-
-  })
+    container.appendChild(frame);
+  }
 }
+
+
 
 // MUSIC
 

@@ -99,8 +99,13 @@
     width: 850px;
     height: 800px;
     margin: 50px auto;
-    border: 2px dashed lightgray;
+    margin-top: 50px;
     border-radius: 50%;
+    background: linear-gradient(180deg, grey 0%, white 45%, grey 47%, white 60%, pink 100%);
+    box-shadow: 6px 6px 0 black;
+    transform: skewX(-15deg);
+    border-width: 1vh;
+    border-color: rgb(199, 199, 199);
 }
 .circle-container button {
     position: absolute;
@@ -115,7 +120,7 @@
     box-shadow: 4px 4px 0 black;
     transform: translate(1px, 1px, -15deg);
     cursor: pointer;
-    filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-1.5px 1.5px 0 white) drop-shadow(0 1.5px 0 white) drop-shadow(0 1.5px 0 white);
+    filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-.1px .1px 0 white) drop-shadow(0 .1px 0 white) drop-shadow(0 .1px 0 white);
 }
 .circle-containter button:active {
     box-shadow: none;
@@ -124,24 +129,24 @@
 }
 
 .circle-container .btn1 { 
-    transform: rotate(0deg) translateX(-350px) translateY(-350px) skewX(-15deg);
+    transform: rotate(0deg) translateX(-370px) translateY(-350px) skewX(-15deg);
 }
 .circle-container .btn2 {
-    transform: rotate(0deg) translateX(-430px) translateY(-250px) skewX(-15deg);
+    transform: rotate(0deg) translateX(-480px) translateY(-250px) skewX(-15deg);
 }
 .circle-container .btn3 {
-    transform: rotate(0deg) translateX(-480px) translateY(-150px) skewX(-15deg);
+    transform: rotate(0deg) translateX(-530px) translateY(-150px) skewX(-15deg);
 }
 .circle-container .btn4 {
-    transform: rotate(0deg) translateX(-520px) translateY(-50px) skewX(-15deg);
+    transform: rotate(0deg) translateX(-510px) translateY(-50px) skewX(-15deg);
 }
 .circle-container .btn5 {
-    transform: rotate(0deg) translateX(-500px) translateY(50px) skewX(-15deg);
+    transform: rotate(0deg) translateX(-480px) translateY(50px) skewX(-15deg);
 }
 
 /* GALLERY */
 .gallery-settings-container {
-    margin-top: 30px;
+    margin-top: 25px;
     margin-bottom: 20px;
     margin-left: 1100px;
 }
@@ -169,8 +174,6 @@
     margin-left: 0px;
     margin-bottom: 5px;
     height: 250px;
-    font-size: 12px;
-    font-family: 'Press Start 2P', monospace;
     border-radius: 14% 6% 14% 6%;
     box-shadow: inset 0 0.5px 0 gray,
         inset 0 0.5px 0 gray,
@@ -183,19 +186,39 @@
 .gallery-container-big {
     display: flex;
     justify-content: center;
-    border-width: 1px;
     margin-left: 150px;
     margin-right: 150px;
 }
 .gallery-frame-big {
     position: relative;
-    margin-bottom: 70px;
+    display: flex;
+    flex-direction: flex column;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 500px;
+    max-width: calc(100% - 80px);
 }
 .gallery-frame-big .gallery-image {
+    max-width: 80%;
     margin-bottom: 5px;
-    height: 500px;
     border-radius: 14% 6% 14% 6%;
     filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0.5px gray) drop-shadow(0.5px 0.5px 1px gray) drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0 black);
+}
+.gallery-frame-big .gallery-description {
+    position: relative;
+    margin-bottom: 5px;
+    margin-left: 25px;
+    height: 350px;
+    width: 200px;
+    padding: 50px 30px 5px 30px;
+    font-size: 12px;
+    font-family: 'Press Start 2P', monospace;
+    color: black;
+    background: white;
+    line-height: 2.5vh;
+    box-shadow: inset 4px 4px 10px grey; 
+    border-radius: 14% 6% 14% 6%;
 }
 
 
