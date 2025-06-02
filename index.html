@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>T+H</title>
     <link href="/styles.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/azw-logo.png" />
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/f936906ae0.js" crossorigin="anonymous"></script>
@@ -12,7 +13,7 @@
   <body>
     <!--Music Player Header-->
     <div class="header">
-      <button class='home-button' onClick="loadPage('home')"><img src="/assets/images/azwLogo.png"></button>
+      <button class='home-button' onClick="loadPage('home')"><img src="/assets/images/azw-Logo.png"></button>
       <button id='previous-track' class="music-controls"><img src="/assets/images/play.png"></button>
       <button id='play-pause-track' class="music-controls"><img src="/assets/images/play.png"></button>
       <button id='next-track' class="music-controls"><img src="/assets/images/play.png"></button>
@@ -120,7 +121,7 @@ function loadPage(page) {
 
 // Listeners
 window.addEventListener('DOMContentLoaded', () => {
-  const initialPage = location.hash ? location.hash.substring(1) : 'gallery';
+  const initialPage = location.hash ? location.hash.substring(1) : 'outfits';
   loadPage(initialPage, false);
 });
 
