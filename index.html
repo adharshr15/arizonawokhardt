@@ -114,6 +114,28 @@ function loadPage(page) {
             console.error('Error loading blog.json:', err);
           })
       }
+
+      // load gallery.json file for outfits page
+      if (page === 'outfits') {
+        fetch('/assets/outfits.json')
+          .then(res => {
+            if (!res.ok) throw new Error('Faild to fetch outfits.json');
+            return res.json();
+          })
+          .then(data => {
+            // get and sort outfits json data by date
+            outfitsData = data.sort((a, b) => {
+              const dateA = new Date(a.date);
+              const dateB = new Date(b.date);
+              return dateB - dateA; // for descending order (most recent first)
+            });
+
+            renderOutfitFrames(currentOutfitIndex);
+          })
+          .catch(err => {
+            console.error('Error loading outfits.json:', err);
+          })
+      }
     });
 
     window.scrollTo(0, 0);
@@ -562,6 +584,56 @@ function renderMusicFrames(page) {
     if (currentMusicPage === totalPages) { nextButton.disabled = true; }
 }
 
+// OUTFITS
 
+// Variables
+let outfitsData = [];
+let currentOutfitIndex = 0;
+let outfitsPerPage = 1;
+
+// Functions
+function nextOutfitPage() {
+  if (currentOutfitIndex < outfitData.length - 1) {
+    currentOutfitIndex++;
+    renderOutfitFrames(currentOutfitIndex);
+  }
+}
+function prevOutfitPage() {
+  if (currentOutfitIndex > 0) {
+    currentOutfitIndex--;
+    renderOutfitFrames(currentOutfitIndex);
+  }
+}
+function renderOutfitFrames(index) {
+  const container = document.getElementById('outfits-container');
+  container.innerHTML =  `
+    <div id="outfits-platform" class="pink-metallic circle-container"></div>
+    <img src="${outfitsData[index].tayla}" class="character tayla">
+    <img src="${outfitsData[index].harsh}" class="character harsh">
+    <div id="outfits-description-frame" class="pink-metallic outfits-frame">
+        <div id="outfits-description-inner-text" class="inner-text outfits-text">${outfitsData[index].description}</div>
+    </div>
+  `;
+
+  const pageSelectContainer = document.getElementById('outfits-page-select-container');
+  pageSelectContainer.innerHTML = `
+    <button id="outfits-prev-button" class="left toggle-button big-prev-button"></button>
+    <button id="outfits-next-button" class="right toggle-button big-next-button"></button>
+  `;
+
+  // add click listeners for buttons
+  const prevButton = document.getElementById('outfits-prev-button');
+  const nextButton = document.getElementById('outfits-next-button');
+
+  prevButton.addEventListener('click', prevOutfitPage);
+  nextButton.addEventListener('click', nextOutfitPage);
+
+  // disable buttons for first and last page
+  const totalPages = outfitsData.length;
+
+  if (currentOutfitIndex === 1) { prevButton.disabled = true; }
+  if (currentOutfitIndex === totalPages) { nextButton.disabled = true; }  
+  
+}
 
 </script>
