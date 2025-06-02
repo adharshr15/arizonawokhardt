@@ -593,7 +593,7 @@ let outfitsPerPage = 1;
 
 // Functions
 function nextOutfitPage() {
-  if (currentOutfitIndex < outfitData.length - 1) {
+  if (currentOutfitIndex < outfitsData.length-1) {
     currentOutfitIndex++;
     renderOutfitFrames(currentOutfitIndex);
   }
@@ -605,13 +605,17 @@ function prevOutfitPage() {
   }
 }
 function renderOutfitFrames(index) {
+  console.log(index);
   const container = document.getElementById('outfits-container');
   container.innerHTML =  `
     <div id="outfits-platform" class="pink-metallic circle-container"></div>
     <img src="${outfitsData[index].tayla}" class="character tayla">
     <img src="${outfitsData[index].harsh}" class="character harsh">
     <div id="outfits-description-frame" class="pink-metallic outfits-frame">
-        <div id="outfits-description-inner-text" class="inner-text outfits-text">${outfitsData[index].description}</div>
+        <div id="outfits-description-inner-text" class="inner-text outfits-text">
+          <h3>${outfitsData[index].title}</h3>
+          <p>${outfitsData[index].description}</p>
+        </div>
     </div>
   `;
 
@@ -631,8 +635,8 @@ function renderOutfitFrames(index) {
   // disable buttons for first and last page
   const totalPages = outfitsData.length;
 
-  if (currentOutfitIndex === 1) { prevButton.disabled = true; }
-  if (currentOutfitIndex === totalPages) { nextButton.disabled = true; }  
+  if (currentOutfitIndex === 0) { prevButton.disabled = true; }
+  if (currentOutfitIndex === totalPages-1) { nextButton.disabled = true; }  
   
 }
 
