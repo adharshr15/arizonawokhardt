@@ -1,16 +1,16 @@
 /* MUSIC PLAYER HEADER */
 .header{ 
     font-family: 'Press Start 2P', monospace;
-    height:35px;
-    width:100%;
-    left:0;
-    top:0;
+    height: 40px;
+    width: 100%;
+    left: 0;
+    top: 0;
     z-index: 999;
-    position:fixed;
-    margin-bottom:20px;  
-    display:flex;
+    position: fixed;
+    margin-bottom: 20px;  
+    display: flex;
     background: linear-gradient(180deg,lightgray 0%, white 45%, gray 47%, pink 100%);
-    border:ridge 2px white; /* border around player */
+    border: ridge 2px white; /* border around player */
     outline: solid 2px black;  
     box-shadow: inset 10px 0px 6px -10px gray, inset -13px 0px 6px -10px gray, inset 0px 10px 6px -10px #ffffff, inset 0px -13px 6px -10px white;
     filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0.5px gray) drop-shadow(0.5px 0.5px 1px gray) drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0 black); 
@@ -26,6 +26,7 @@
     padding-top: 6px;
     margin-left: 5px;
     margin-top: 4px;
+    margin-bottom: 4px;
     margin-right: 5px;
     font-size: 18px;
     background: rgb(27, 27, 27);
@@ -42,8 +43,11 @@
 .home-button img {
     padding-left: 2px; 
     margin-top: -2px;
-    width: 40px; 
-    height: 40px;
+    width: 45px; 
+    height: 45px;
+}
+.prev-next {
+    height: 22px;
 }
 #song-title {
     width: 300px;

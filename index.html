@@ -14,9 +14,9 @@
     <!--Music Player Header-->
     <div class="header">
       <button class='home-button' onClick="loadPage('home')"><img src="/assets/images/azw-Logo.png"></button>
-      <button id='previous-track' class="music-controls"><img src="/assets/images/play.png"></button>
+      <button id='previous-track' class="music-controls"><img class='prev-next'src="/assets/images/prev.png"></button>
       <button id='play-pause-track' class="music-controls"><img src="/assets/images/play.png"></button>
-      <button id='next-track' class="music-controls"><img src="/assets/images/play.png"></button>
+      <button id='next-track' class="music-controls"><img class='prev-next' src="/assets/images/next.png"></button>
       <div id="song-title-marquee" class="header-marquee">
         <marquee id="song-title"></marquee>
       </div>
@@ -143,7 +143,7 @@ function loadPage(page) {
 
 // Listeners
 window.addEventListener('DOMContentLoaded', () => {
-  const initialPage = location.hash ? location.hash.substring(1) : 'outfits';
+  const initialPage = location.hash ? location.hash.substring(1) : 'home';
   loadPage(initialPage, false);
 });
 
@@ -176,9 +176,11 @@ function playPauseTrack() {
   if (isPlaying) {
     currentSong.pause();
     isPlaying = !isPlaying;
+    playPauseTrackButton.innerHTML = '<img src="/assets/images/play.png">';
   } else {
     currentSong.play();
     isPlaying = !isPlaying;
+    playPauseTrackButton.innerHTML = '<img src="/assets/images/pause.png">';
   }
 }
 
@@ -190,7 +192,7 @@ function nextTrack() {
   }
   loadTrack(track_index);
   currentSong.play();
-  currentSong.
+  playPauseTrackButton.innerHTML = '<img src="/assets/images/pause.png">';
   isPlaying = true;
 }
 
@@ -200,6 +202,7 @@ function previousTrack() {
   } 
   loadTrack(track_index);
   currentSong.play();
+  playPauseTrackButton.innerHTML = '<img src="/assets/images/pause.png">';
   isPlaying = true;
 }
 
