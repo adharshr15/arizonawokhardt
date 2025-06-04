@@ -1,16 +1,58 @@
 [
     {
+        "title": "Valentine's Day",
+        "date": "2/14/2025",
+        "tayla": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748999257/2-14T_efhisg.png", 
+        "harsh": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748999409/2-14H_sxqnjj.png",
+        "description": "we were the coolest people in that wingstop"
+    },
+    {
+        "title": "First Phone Call",
+        "date": "8/15/2024",
+        "tayla": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748969352/ogT_gvd0rn.png", 
+        "harsh": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748969354/ogH_o6utkk.png",
+        "description": "when i called you while you were on shrooms bc i missed you. we made these avatars because everyone in the discord was making them. you thought it was cute that i was smiling like that lol."
+    },
+    {
+        "title": "First Comeback Tour",
+        "date": "9/27/2024",
+        "tayla": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748964803/9-27T_pwppvr.png", 
+        "harsh": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748964132/comebackH_hey3jn.png",
+        "description": "we accidently matched lol, i think we do that a lot"
+    },
+    {
+        "title": "Which House Show",
+        "date": "11/9/2024",
+        "tayla": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748964392/dentonT_d1c8ps.png", 
+        "harsh": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748964392/dentonH_zy3hbd.png",
+        "description": ""
+    },
+    {
+        "title": "Perseid Meteor Shower",
+        "date": "8/12/2024",
+        "tayla": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748964395/starGazeT_ss40ev.png", 
+        "harsh": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748964393/8-11H_ql2qlv.png",
+        "description": "i remember i ran out of clothes for the weekend since i thought i only was going to stay till saturday but i stayed an extra day bc i liked you so much"
+    },
+    {
+        "title": "Post-Formal Function",
+        "date": "4/28/2024",
+        "tayla": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748964395/postFormalT_kzrshu.png", 
+        "harsh": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748964394/postFormalH_bbcu1h.png",
+        "description": "ok, the ricks..."
+    },
+    {
         "title": "First Date",
         "date": "8/10/2024",
-        "tayla": "https://files.catbox.moe/eo9976.png", 
-        "harsh": "https://files.catbox.moe/jynamg.png",
+        "tayla": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748964521/8-10T_fe7g2r.png", 
+        "harsh": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748964392/8-10H_xtdvoo.png",
         "description": "our first time hanging out, i remember we went to your apartment so you could change into your docs"
     },
     {
         "title": "Abandoned House Date",
-        "date": "10/10/2024",
-        "tayla": "https://files.catbox.moe/ae10u1.PNG", 
-        "harsh": "https://files.catbox.moe/nqir0c.PNG",
+        "date": "10/20/2024",
+        "tayla": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748964394/10-20T_xzufyt.png", 
+        "harsh": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1748964393/8-20H_stbhvd.png",
         "description": "somehow nick and brady coincidently crashed our date lol"
     }
 ]

@@ -127,7 +127,7 @@ function loadPage(page) {
             outfitsData = data.sort((a, b) => {
               const dateA = new Date(a.date);
               const dateB = new Date(b.date);
-              return dateB - dateA; // for descending order (most recent first)
+              return dateA - dateB; // for ascending order (most recent last)
             });
 
             renderOutfitFrames(currentOutfitIndex);
@@ -615,6 +615,7 @@ function renderOutfitFrames(index) {
         <div id="outfits-description-inner-text" class="inner-text outfits-text">
           <h3>${outfitsData[index].title}</h3>
           <p>${outfitsData[index].description}</p>
+          <p class='date'>${outfitsData[index].date}</p>
         </div>
     </div>
   `;
