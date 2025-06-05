@@ -37,104 +37,114 @@
 <script>
 // PAGE LOADING
 
+const cache = {
+  music: null,
+  gallery: null,
+  blog: null,
+  outfits: null
+}
+
 // Functions
+
+
 function loadPage(page) {
   fetch(`${page}.html`)
     .then(res => res.text())
     .then(html => {
       document.getElementById('main-content').innerHTML = html;
-      // load music.json file for music page
-      if (page === 'music') {
-        fetch("assets/music.json")
-          .then(res => {
-            if (!res.ok) throw new Error('Failed to fetch music.json');
-            return res.json();
-          })
-          .then(data => {
-            musicData = data.sort((a, b) => {
-              const dateA = new Date(a.date);
-              const dateB = new Date(b.date);
-              return dateB - dateA; // for descending order (most recent first)
-            });
+
+      switch(page) {
+        case 'music':
+          if (cache.music) {
+            // Use cached data
+            musicData = cache.music;
             renderMusicFrames(currentMusicPage);
-          })
-          .catch(err => {
-            console.error('Error loading music.json:', err);
-          });
-      }
+          } else {
+            fetch("assets/music.json")
+              .then(res => {
+                if (!res.ok) throw new Error('Failed to fetch music.json');
+                return res.json();
+              })
+              .then(data => {
+                musicData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+                cache.music = musicData; // Cache the data
+                renderMusicFrames(currentMusicPage);
+              })
+              .catch(err => {
+                console.error('Error loading music.json:', err);
+              });
+          }
+          break;
 
-      // load gallery.json file for gallery page
-      if (page === 'gallery') {
-        fetch('/assets/gallery.json')
-          .then(res => {
-            if (!res.ok) throw new Error('Faild to fetch gallery.json');
-            return res.json();
-          })
-          .then(data => {
-            // get and sort gallery json data by date
-            galleryData = data.sort((a, b) => {
-              const dateA = new Date(a.date);
-              const dateB = new Date(b.date);
-              return dateB - dateA; // for descending order (most recent first)
-            });
-
-            // grid view by default
+        case 'gallery':
+          if (cache.gallery) {
+            galleryData = cache.gallery;
             galleryViewGrid = true;
             renderGalleryFrames(currentGalleryPage, 'grid');
+            setupGalleryButtons();
+          } else {
+            fetch('/assets/gallery.json')
+              .then(res => {
+                if (!res.ok) throw new Error('Failed to fetch gallery.json');
+                return res.json();
+              })
+              .then(data => {
+                galleryData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+                cache.gallery = galleryData; // Cache the data
 
-            const gridGalleryButton = document.getElementById('grid-gallery-button');
-            const bigGalleryButton = document.getElementById('big-gallery-button');
+                galleryViewGrid = true;
+                renderGalleryFrames(currentGalleryPage, 'grid');
+                setupGalleryButtons();
+              })
+              .catch(err => {
+                console.error('Error loading gallery.json:', err);
+              });
+          }
+          break;
 
-            gridGalleryButton.addEventListener('click', gridViewToggle);
-            bigGalleryButton.addEventListener('click', bigViewToggle);
-          })
-          .catch(err => {
-            console.error('Error loading gallery.json:', err);
-          })
-      }
-
-      // load blog.json for blog page
-      if (page === 'blog') {
-        fetch('/assets/blog.json')
-          .then(res => {
-            if (!res.ok) throw new Error('Faild to fetch blog.json');
-            return res.json();
-          })
-          .then(data => {
-            // get and sort gallery json data by date
-            blogData = data.sort((a, b) => {
-              const dateA = new Date(a.date);
-              const dateB = new Date(b.date);
-              return dateB - dateA; // for descending order (most recent first)
-            });
-
+        case 'blog':
+          if (cache.blog) {
+            blogData = cache.blog;
             renderBlogFrames(currentBlogPage);
-          })
-          .catch(err => {
-            console.error('Error loading blog.json:', err);
-          })
-      }
+          } else {
+            fetch('/assets/blog.json')
+              .then(res => {
+                if (!res.ok) throw new Error('Failed to fetch blog.json');
+                return res.json();
+              })
+              .then(data => {
+                blogData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+                cache.blog = blogData; // Cache the data
+                renderBlogFrames(currentBlogPage);
+              })
+              .catch(err => {
+                console.error('Error loading blog.json:', err);
+              });
+          }
+          break;
 
-      // load gallery.json file for outfits page
-      if (page === 'outfits') {
-        fetch('/assets/outfits.json')
-          .then(res => {
-            if (!res.ok) throw new Error('Faild to fetch outfits.json');
-            return res.json();
-          })
-          .then(data => {
-            // get and sort outfits json data by date
-            outfitsData = data.sort((a, b) => {
-              const dateA = new Date(a.date);
-              const dateB = new Date(b.date);
-              return dateA - dateB; // for ascending order (most recent last)
-            });
-
+        case 'outfits':
+          if (cache.outfits) {
+            outfitsData = cache.outfits;
             renderOutfitFrames(currentOutfitIndex);
-          })
-          .catch(err => {
-            console.error('Error loading outfits.json:', err);
-          })
+          } else {
+            fetch('/assets/outfits.json')
+              .then(res => {
+                if (!res.ok) throw new Error('Failed to fetch outfits.json');
+                return res.json();
+              })
+              .then(data => {
+                outfitsData = data.sort((a, b) => new Date(a.date) - new Date(b.date)); // ascending
+                cache.outfits = outfitsData; // Cache the data
+                renderOutfitFrames(currentOutfitIndex);
+              })
+              .catch(err => {
+                console.error('Error loading outfits.json:', err);
+              });
+          }
+          break;
+
+        // Add other pages as needed
       }
     });
 
@@ -144,7 +154,7 @@ function loadPage(page) {
 // Listeners
 window.addEventListener('DOMContentLoaded', () => {
   const initialPage = location.hash ? location.hash.substring(1) : 'home';
-  loadPage(initialPage, false);
+  loadPage(initialPage);
 });
 
 
@@ -541,10 +551,11 @@ function renderMusicFrames(page) {
         const globalIndex = start + index;
 
         const frame = document.createElement('div');
-        frame.className = 'pink-metallic music-frame';
+        frame.className = 'pink-metallic';
 
         // if track index is even, make left frame
         if (globalIndex % 2 == 0) {
+          frame.className += ' music-frame-left';
             frame.innerHTML = `
                 <img id='cover-art-left' class='cover-art-left' src="${track.art}">
                 <div id='inner-right' class="inner-text inner-right">
@@ -554,6 +565,7 @@ function renderMusicFrames(page) {
                 </div>
             `;
         } else {
+          frame.className += ' music-frame-right';
             frame.innerHTML = `
                 <div id='inner-left' class="inner-text inner-left">
                     <h3>${track.song}</h3>
@@ -612,8 +624,8 @@ function renderOutfitFrames(index) {
   const container = document.getElementById('outfits-container');
   container.innerHTML =  `
     <div id="outfits-platform" class="pink-metallic circle-container"></div>
-    <img src="${outfitsData[index].tayla}" class="character tayla">
-    <img src="${outfitsData[index].harsh}" class="character harsh">
+    <img src="${outfitsData[index].tayla}" class="character tayla" loading='lazy'>
+    <img src="${outfitsData[index].harsh}" class="character harsh" loading='lazy'>
     <div id="outfits-description-frame" class="pink-metallic outfits-frame">
         <div id="outfits-description-inner-text" class="inner-text outfits-text">
           <h3>${outfitsData[index].title}</h3>
