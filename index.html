@@ -45,8 +45,6 @@ const cache = {
 }
 
 // Functions
-
-
 function loadPage(page) {
   fetch(`${page}.html`)
     .then(res => res.text())
@@ -149,6 +147,17 @@ function loadPage(page) {
     });
 
     window.scrollTo(0, 0);
+}
+function setupGalleryButtons() {
+  const gridGalleryButton = document.getElementById('grid-gallery-button');
+  const bigGalleryButton = document.getElementById('big-gallery-button');
+  if (gridGalleryButton && bigGalleryButton) {
+    gridGalleryButton.removeEventListener('click', gridViewToggle);
+    bigGalleryButton.removeEventListener('click', bigViewToggle);
+
+    gridGalleryButton.addEventListener('click', gridViewToggle);
+    bigGalleryButton.addEventListener('click', bigViewToggle);
+  }
 }
 
 // Listeners
