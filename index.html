@@ -566,7 +566,7 @@ function renderMusicFrames(page) {
         if (globalIndex % 2 == 0) {
           frame.className += ' music-frame-left';
             frame.innerHTML = `
-                <img id='cover-art-left' class='cover-art-left' src="${track.art}">
+                <a href='${track.link}' target="_blank" rel="noopener noreferrer" class='unstyled-a'><img id='cover-art-left' class='cover-art-left' src="${track.art}"></a>
                 <div id='inner-right' class="inner-text inner-right">
                     <h3>${track.song}</h3>
                     <p class='date'>${track.date}</p>
@@ -581,7 +581,7 @@ function renderMusicFrames(page) {
                     <p class='description'>${track.description}</p>
                     <p class='date'>${track.date}</p>
                 </div>
-                <img id='cover-art-right' class='cover-art-right' src="${track.art}">
+                <a href='${track.link}' target="_blank" rel="noopener noreferrer" class='unstyled-a'><img id='cover-art-right' class='cover-art-right' src="${track.art}"></a>
             `;
         }
 
