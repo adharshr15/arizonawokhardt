@@ -526,6 +526,7 @@ function renderBlogFrames(page) {
 // Variables
 let musicData = [];
 let currentMusicPage = 1;
+let currentMusicIndex = 1;
 let musicItemsPerPage = 10;
 
 // Functions
@@ -537,12 +538,23 @@ function nextMusicPage() {
     renderMusicFrames(currentMusicPage); 
   }
 }
-
 function prevMusicPage() {
   if (currentMusicPage > 1) {
     currentMusicPage--; 
     renderMusicFrames(currentMusicPage);
   }
+}
+function playMusicFromFrame(index) {
+  // Change to Music Playlist, setting song index to currentMusicIndex
+  const selected = "Music";
+  playlistSelect.value = selected;
+  track_list = playlists[selected];
+  track_index = index;
+  songTitle.textContent = track_list[index].name;
+  loadTrack(track_index);
+  currentSong.play();
+  playPauseTrackButton.innerHTML = '<img src="/assets/images/pause.png">';
+  isPlaying = true;
 }
 function renderMusicFrames(page) {
     const container = document.getElementById('music-container');
@@ -566,7 +578,7 @@ function renderMusicFrames(page) {
         if (globalIndex % 2 == 0) {
           frame.className += ' music-frame-left';
             frame.innerHTML = `
-                <a href='${track.link}' target="_blank" rel="noopener noreferrer" class='unstyled-a'><img id='cover-art-left' class='cover-art-left' src="${track.art}"></a>
+                <a onClick='playMusicFromFrame(${globalIndex})' target="_blank" rel="noopener noreferrer"><img class='cover-art-left' src="${track.art}" style="cursor: pointer;"></a>
                 <div id='inner-right' class="inner-text inner-right">
                     <h3>${track.song}</h3>
                     <p class='date'>${track.date}</p>
@@ -581,7 +593,7 @@ function renderMusicFrames(page) {
                     <p class='description'>${track.description}</p>
                     <p class='date'>${track.date}</p>
                 </div>
-                <a href='${track.link}' target="_blank" rel="noopener noreferrer" class='unstyled-a'><img id='cover-art-right' class='cover-art-right' src="${track.art}"></a>
+                <a onClick='playMusicFromFrame(${globalIndex})' target="_blank" rel="noopener noreferrer"><img class='cover-art-right' src="${track.art}" style="cursor: pointer;"></a>
             `;
         }
 

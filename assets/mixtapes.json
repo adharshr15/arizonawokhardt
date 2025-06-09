@@ -64,5 +64,11 @@
         { "name": "Where's my Dini? - Ovlov", "path": "https://files.catbox.moe/4t070n.wav" },
         { "name": "The Weather - Built to Spill", "path": "https://files.catbox.moe/e4rc6b.wav" },
         { "name": "Silence Of The Lambs - Babyteeth", "path": "https://files.catbox.moe/8uois3.wav" }
+    ], 
+    "Music" : [
+        { "name": "Skin & Bones - The Sundays", "path": "https://files.catbox.moe/nz7oxv.wav"}, 
+        { "name": "True Love - Solange, Lil' Romeo", "path": "https://files.catbox.moe/ujihp6.wav"},
+        { "name": "Oh Boy - Cam'ron, Juelz Santana", "path": "https://files.catbox.moe/bqf5gj.wav"},
+        { "name": "Music & Me - fakemink", "path": "https://files.catbox.moe/brwxcx.wav"}
     ]
 }
