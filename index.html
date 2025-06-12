@@ -373,8 +373,7 @@ function setupGalleryButtons() {
 function galleryGridViewToggle() {
   if (!galleryViewGrid) {
     galleryViewGrid = true;
-    renderGalleryFrames(currentGalleryPage, 'grid');
-    
+    renderGalleryFrames(currentGalleryPage, 'grid'); 
   }
 }
 function galleryBigViewToggle() {
@@ -438,6 +437,34 @@ function renderGalleryFrames(content, view) {
 
     if (currentGalleryPage === 1) { prevButton.disabled = true; }
     if (currentGalleryPage === totalPages) { nextButton.disabled = true; }
+
+    // cache next page
+    const nextPage = content + 1;
+    
+    if (nextPage <= totalPages) {
+      const preloadStart = (nextPage - 1) * galleryItemsPerPage;
+      const preloadEnd = nextPage * galleryItemsPerPage;
+      const preloadItems = galleryData.slice(preloadStart, preloadEnd);
+
+      preloadItems.forEach(item => {
+        const img = new Image();
+        img.src = item.path;
+      });
+    }
+
+    // cache previous page
+    const prevPage = content - 1;
+
+    if (prevPage >= 1) {
+      const preloadStart = (prevPage - 1) * galleryItemsPerPage;
+      const preloadEnd = prevPage * galleryItemsPerPage;
+      const preloadItems = galleryData.slice(preloadStart, preloadEnd);
+
+      preloadItems.forEach(item => {
+        const img = new Image();
+        img.src = item.path;
+      });
+    }
 
   // if big view, the current index is passed as content
   } else {
@@ -521,7 +548,7 @@ function renderBlogFrames(page) {
       <div class="date">${blog.date}</div>
       <div class="inner-text blog-text">
           <h3>${blog.title}</h3>
-          <p>${blog.text}</p>
+          <p style="white-space: pre-line;">${blog.text}</p>
       </div>
     `;
     frame.dataset.index = globalIndex;
@@ -701,6 +728,26 @@ function renderOutfitFrames(index) {
 
   if (currentOutfitIndex === 0) { prevButton.disabled = true; }
   if (currentOutfitIndex === totalPages-1) { nextButton.disabled = true; }  
+
+  // cache next outfits
+  const nextIndex = index + 1;
+  if (nextIndex < outfitsData.length) {
+    const preloadTayla = new Image();
+    preloadTayla.src = outfitsData[nextIndex].tayla;
+
+    const preloadHarsh = new Image();
+    preloadHarsh.src = outfitsData[nextIndex].harsh;
+  }
+
+  // cache previous outfits
+  const prevIndex = index - 1;
+  if (prevIndex >= 0) {
+    const preloadPrevTayla = new Image();
+    preloadPrevTayla.src = outfitsData[prevIndex].tayla;
+
+    const preloadPrevHarsh = new Image();
+    preloadPrevHarsh.src = outfitsData[prevIndex].harsh;
+  }
   
 }
 

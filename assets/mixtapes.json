@@ -66,9 +66,10 @@
         { "name": "Silence Of The Lambs - Babyteeth", "path": "https://files.catbox.moe/8uois3.wav" }
     ], 
     "Music" : [
+        { "name": "Kamera - Wilco", "path": "https://files.catbox.moe/iqo18u.mp3"}, 
         { "name": "Skin & Bones - The Sundays", "path": "https://files.catbox.moe/nz7oxv.wav"}, 
         { "name": "True Love - Solange, Lil' Romeo", "path": "https://files.catbox.moe/ujihp6.wav"},
         { "name": "Oh Boy - Cam'ron, Juelz Santana", "path": "https://files.catbox.moe/bqf5gj.wav"},
-        { "name": "Music & Me - fakemink", "path": "https://files.catbox.moe/brwxcx.wav"}
+        { "name": "Music & Me - fakemink", "path": "https://files.catbox.moe/drxxz8.wav"}
     ]
 }

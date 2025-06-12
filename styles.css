@@ -39,12 +39,17 @@
 .home-button {
     all: unset;
     cursor: pointer;
+    filter: drop-shadow(0 0.2px 0 pink) drop-shadow(0 0.2px 0.5px pink) drop-shadow(0.2px 0.2px 1px pink) drop-shadow(-0.2px 0.2px 0 white) drop-shadow(0 0.2px 0 white);
 }
 .home-button img {
-   padding-left: 0.125rem;
+    padding-left: 0.125rem;
     margin-top: -0.125rem;
     width: 2.8125rem;
     height: 2.8125rem;
+    transition: filter 0.3s ease;
+}
+.home-button:hover img {
+    filter: drop-shadow(0 0.1px 0 pink) drop-shadow(0 0.2px 0.2px pink) drop-shadow(0.1px 0.1px .8px pink) drop-shadow(-0.2px 0.2px 0 white) drop-shadow(0 0.1px 0 white);
 }
 .prev-next {
     height: 1.375rem;
@@ -77,7 +82,7 @@
     border-width: 1vh;
     border-color: rgb(199, 199, 199);
     border-radius: 14% 6% 14% 6%;
-    filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0.5px gray) drop-shadow(0.5px 0.5px 2px grey) drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0 black);
+    filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0.5px 0.5px 2px grey) drop-shadow(-0.5px 0.5px 0 black);
 }
 .inner-text {
     font-size: 12px;
@@ -93,7 +98,7 @@
     z-index: 999;
     color: pink;
     font-size: 10pt;
-    filter: drop-shadow(0 1px 0 grey) drop-shadow(0 1px 1px grey) drop-shadow(0.5px 0.5px 1px transparent) drop-shadow(-0.5px 0.5px 0 transparent) drop-shadow(0 0.5px 0 transparent);
+    filter: drop-shadow(0 1.2px 0 grey) drop-shadow(0 1.2px 1px grey) drop-shadow(0.5px 0.5px 1px transparent) drop-shadow(-0.5px 0.5px 0 transparent) drop-shadow(0 0.5px 0 transparent);
 
 }
 
@@ -104,16 +109,19 @@
     margin-right: -4px;
     transform: skewX(-15deg);
     border-width: 5px;
+    box-shadow: 5px 5px 0 rgb(27, 27, 27);
     background: linear-gradient(180deg, grey 0%, white 45%, grey 47%, white 60%, grey 100%);
     border-color: rgb(199, 199, 199);
     font-size: 16px;
     cursor: pointer;
-    filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0 0.5px 0.5px gray) drop-shadow(0.5px 0.5px 1px gray) drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black);
+    filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0.5px 0.5px 2px grey) drop-shadow(-0.5px 0.5px 0 black);
 }
 .toggle-button:disabled {
     cursor: default;
-    border-color: white;
-    background: linear-gradient(180deg, grey 0%, white 40%, grey 42%, white 55%, grey 100%);
+    border-color: rgb(206, 206, 206);
+    box-shadow: 3px 3px 0px rgb(27, 27, 27);
+    transform: translateX(1px) translateY(2px) skewX(-15deg);
+    /* background: linear-gradient(180deg, grey 0%, white 40%, grey 42%, white 55%, grey 100%); */
 }
 .right {
     border-radius: 0 100px 100px 0;
@@ -152,7 +160,6 @@
     filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-1.5px 1.5px 0 white) drop-shadow(0 1.5px 0 white) drop-shadow(0 1.5px 0 white);
     cursor: pointer;
 }
-
 .grid-prev-button:disabled,
 .grid-next-button:disabled,
 .big-prev-button:disabled,
@@ -356,6 +363,7 @@
     margin-left: 200px;
     margin-right: 200px;
     margin-top: 30px;
+    margin-bottom: -30px;
 }
 .blog-page-select-container {
     display: flex;
