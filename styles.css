@@ -425,6 +425,74 @@
     transform: translateX(260px) translateY(150px) skewX(0deg);
 }
 
+/* SCRAPBOOK */
+.scrapbook-settings-container {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-left: 1100px;
+}
+.scrapbook-container-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 50px;
+    gap: 30px;
+}
+.scrapbook-container-big {
+    display: flex;
+    justify-content: center;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+.scrapbook-frame-small {
+    position: relative;
+    display: flex;
+}
+.scrapbook-frame-small:hover {
+    /* box-shadow: 4px 4px 0 black; */
+    transform: translate(1px, 1px, -15deg);
+    filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-1.5px 1.5px 0 white) drop-shadow(0 1.5px 0 white) drop-shadow(0 1.5px 0 white);
+    cursor: pointer;
+}
+.scrapbook-frame-small .scrapbook-image {
+    margin-left: 0px;
+    margin-bottom: 5px;
+    height: 220px;
+    border-radius: 14% 6% 14% 6%;
+    filter: drop-shadow(0 0.5px 0 pink) drop-shadow(0 0.5px 0.5px pink) drop-shadow(0.5px 0.5px 2px pink) drop-shadow(-0.5px 0.5px 0 white) drop-shadow(0 0.5px 0 white);
+}
+
+.scrapbook-frame-big {
+    position: relative;
+    display: flex;
+    flex-direction: flex column;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 500px;
+    max-width: calc(100% - 80px);
+}
+.scrapbook-frame-big .scrapbook-image {
+    max-width: 80%;
+    margin-bottom: 5px;
+    border-radius: 14% 6% 14% 6%;
+    filter: drop-shadow(0 0.5px 0 pink) drop-shadow(0 0.5px 0.5px pink) drop-shadow(0.5px 0.5px 2px pink) drop-shadow(-0.5px 0.5px 0 white) drop-shadow(0 0.5px 0 white);
+}
+.scrapbook-frame-big .scrapbook-description {
+    position: relative;
+    margin-bottom: 5px;
+    margin-left: 25px;
+    height: 350px;
+    width: 200px;
+    padding: 50px 30px 5px 30px;
+}
+.scrapbook-description .date {
+    position: absolute;
+    bottom: 20px;
+}
+
 /* SCROLLER */
 ::-webkit-scrollbar {
     width: 16px;
