@@ -177,7 +177,7 @@ function loadPage(page) {
 
 // Listeners
 window.addEventListener('DOMContentLoaded', () => {
-  const initialPage = location.hash ? location.hash.substring(1) : 'home';
+  const initialPage = location.hash ? location.hash.substring(1) : 'scrapbook';
   loadPage(initialPage);
 });
 
@@ -834,13 +834,13 @@ function renderScrapbookFrames(content, view) {
     const pageItems = scrapbookData.slice(start, end);
     currentScrapbookIndex = start;
 
-    pageItems.forEach((image, index) => {
+    pageItems.forEach((item, index) => {
       const globalIndex = start + index;
 
       const frame = document.createElement('div');
-      frame.className = 'pink-metallic scrapbook-frame-small';
+      frame.className = 'scrapbook-frame-small';
       frame.innerHTML = `
-        <img class="scrapbook-image" src="${image.path}">
+        <img class="scrapbook-image" src="${item.path}">
       `;
       frame.dataset.index = globalIndex;
 
@@ -878,19 +878,24 @@ function renderScrapbookFrames(content, view) {
 
     container.className = 'scrapbook-container-big';
     
-    const image = scrapbookData[content];
+    const item = scrapbookData[content];
 
     const frame = document.createElement('div');
     frame.className = 'pink-metallic scrapbook-frame-big';
     frame.innerHTML = `
-      <img class="scrapbook-image" src="${image.path}">
       <div class='inner-text scrapbook-description'>
-        ${image.description}
-        <div class='date'>${image.date}</div>
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
       </div>
     `;
 
+    const image = document.createElement('div');
+    image.className = 'scrapbook-image-big';
+    image.innerHTML = `<img class="scrapbook-image-big" src="${item.path}">`;
+
+    container.appendChild(image);
     container.appendChild(frame);
+    
 
     // add page select buttons
     pageSelectContainer.innerHTML = `

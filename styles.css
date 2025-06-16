@@ -192,14 +192,14 @@
 }
 .circle-container button:hover {
     box-shadow: 4px 4px 0 black;
-    transform: translate(1px, 1px, -15deg);
+    /* transform: translate(1px, 1px, -15deg); */
     cursor: pointer;
     filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-.1px .1px 0 white) drop-shadow(0 .1px 0 white) drop-shadow(0 .1px 0 white);
 }
 .circle-containter button:active {
     box-shadow: none;
-    margin-left: 1px;
-    margin-top: 1px;
+    /* margin-left: 1px;
+    margin-top: 1px; */
 }
 
 .circle-container .btn1 { 
@@ -264,6 +264,7 @@
     margin-top: 5px;
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: -30px;
     height: 500px;
     max-width: calc(100% - 80px);
 }
@@ -457,10 +458,9 @@
 .scrapbook-frame-small {
     position: relative;
     display: flex;
+    /* transition: box-shadow 0.1s, filter 0.2s; */
 }
 .scrapbook-frame-small:hover {
-    /* box-shadow: 4px 4px 0 black; */
-    transform: translate(1px, 1px, -15deg);
     filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-1.5px 1.5px 0 white) drop-shadow(0 1.5px 0 white) drop-shadow(0 1.5px 0 white);
     cursor: pointer;
 }
@@ -468,33 +468,40 @@
     margin-left: 0px;
     margin-bottom: 5px;
     height: 220px;
-    border-radius: 14% 6% 14% 6%;
-    filter: drop-shadow(0 0.5px 0 pink) drop-shadow(0 0.5px 0.5px pink) drop-shadow(0.5px 0.5px 2px pink) drop-shadow(-0.5px 0.5px 0 white) drop-shadow(0 0.5px 0 white);
+    filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0.5px 0.5px 2px grey) drop-shadow(-0.5px 0.5px 0 black);
 }
 
 .scrapbook-frame-big {
-    position: relative;
+    /* position: relative;
     display: flex;
     flex-direction: flex column;
     margin-top: 5px;
     margin-left: 20px;
     margin-right: 20px;
     height: 500px;
-    max-width: calc(100% - 80px);
+    max-width: calc(100% - 80px); */
+    position: relative;
+    width: 330px;
+    height: 450px;
+    margin: 30px -30px 0px 130px;
 }
-.scrapbook-frame-big .scrapbook-image {
-    max-width: 80%;
-    margin-bottom: 5px;
-    border-radius: 14% 6% 14% 6%;
+.scrapbook-image-big {
+    /* max-width: 80%; */
+    height: 400px;
+    margin-top: 25px;
+    margin-left: -20px;
     filter: drop-shadow(0 0.5px 0 pink) drop-shadow(0 0.5px 0.5px pink) drop-shadow(0.5px 0.5px 2px pink) drop-shadow(-0.5px 0.5px 0 white) drop-shadow(0 0.5px 0 white);
 }
 .scrapbook-frame-big .scrapbook-description {
-    position: relative;
+    /* position: relative;
     margin-bottom: 5px;
     margin-left: 25px;
     height: 350px;
     width: 200px;
-    padding: 50px 30px 5px 30px;
+    padding: 50px 30px 5px 30px; */
+    position: relative;
+    height: 418px;
+    padding: 30px 30px 0 30px;
 }
 .scrapbook-description .date {
     position: absolute;
