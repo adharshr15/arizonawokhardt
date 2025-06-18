@@ -1,8 +1,15 @@
 <style>body { overflow: hidden; background-color: pink; }</style>
-<div class='circle-container' position="relative">
-    <button class="pink-metallic btn5" onclick="loadPage('scrapbook')">Scrapbook</button>
+<div class='circle-frame' position="relative">
+    <div class="circle-video">
+        <video width="640" height="360" autoplay muted loop playsinline>
+            <source src="./assets/laptop_vid_1.mp4" type="video/mp4" >
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <button class="pink-metallic btn3" onclick="loadPage('scrapbook')">Scrapbook</button>
     <button class="pink-metallic btn2" onclick="loadPage('gallery')">Gallery</button>
-    <button class="pink-metallic btn3" onclick="loadPage('music')">Music</button>
+    <button class="pink-metallic btn4" onclick="loadPage('music')">Music</button>
     <button class="pink-metallic btn1" onclick="loadPage('blog')">Blog</button>
-    <button class="pink-metallic btn4" onclick="loadPage('outfits')">Outfits</button>
+    <button class="pink-metallic btn5" onclick="loadPage('outfits')">Fits</button>
 </div>

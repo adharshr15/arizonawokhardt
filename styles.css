@@ -170,18 +170,28 @@
 
 
 /* HOME */
-.circle-container {
-    position: relative;
+.circle-frame {
+    position: absolute;
     width: 850px;
     height: 800px;
-    margin: 50px auto;
-    margin-top: 50px;
+    top: 20px;
+    left: 50%;
     border-radius: 50%;
     background: linear-gradient(180deg, grey 0%, white 45%, grey 47%, white 60%, pink 100%);
     box-shadow: 6px 6px 0 black;
-    transform: skewX(-15deg);
+    transform: translateX(-50%) skewX(-15deg);
 }
-.circle-container button {
+.circle-platform { 
+    position: absolute; 
+    width: 850px; 
+    height: 800px;
+    margin: 40px 0 0 250px; 
+    border-radius: 50%; 
+    background: linear-gradient(180deg, grey 0%, white 45%, grey 47%, white 60%, pink 100%); 
+    box-shadow: 6px 6px 0 black; 
+    transform: skewX(-15deg); 
+}
+.circle-frame button {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -190,33 +200,53 @@
     font-size: 25px;
     color: black;
 }
-.circle-container button:hover {
+.circle-frame button:hover {
     box-shadow: 4px 4px 0 black;
-    /* transform: translate(1px, 1px, -15deg); */
     cursor: pointer;
     filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-.1px .1px 0 white) drop-shadow(0 .1px 0 white) drop-shadow(0 .1px 0 white);
 }
-.circle-containter button:active {
+.circle-frame button:active {
     box-shadow: none;
     /* margin-left: 1px;
     margin-top: 1px; */
 }
 
-.circle-container .btn1 { 
-    transform: rotate(0deg) translateX(-370px) translateY(-350px) skewX(-15deg);
+.circle-frame .btn1 { 
+    transform: rotate(0deg) translateX(-370px) translateY(-320px) skewX(-15deg);
 }
-.circle-container .btn2 {
-    transform: rotate(0deg) translateX(-480px) translateY(-250px) skewX(-15deg);
+.circle-frame .btn2 {
+    transform: rotate(0deg) translateX(-500px) translateY(-220px) skewX(-15deg);
 }
-.circle-container .btn3 {
-    transform: rotate(0deg) translateX(-530px) translateY(-150px) skewX(-15deg);
+.circle-frame .btn3 {
+    transform: rotate(0deg) translateX(-590px) translateY(-120px) skewX(-15deg);
 }
-.circle-container .btn4 {
-    transform: rotate(0deg) translateX(-510px) translateY(-50px) skewX(-15deg);
+.circle-frame .btn4 {
+    transform: rotate(0deg) translateX(-500px) translateY(-20px) skewX(-15deg);
 }
-.circle-container .btn5 {
-    transform: rotate(0deg) translateX(-480px) translateY(50px) skewX(-15deg);
+.circle-frame .btn5 {
+    transform: rotate(0deg) translateX(-470px) translateY(80px) skewX(-15deg);
 }
+
+.circle-video {
+    position: relative;
+    width: 755px;  
+    height: 734px;
+    overflow: hidden;      
+    border-radius: 50%;  
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.circle-video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover; 
+}
+
 
 /* GALLERY */
 .gallery-settings-container {
