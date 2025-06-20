@@ -157,7 +157,7 @@
 .big-prev-button:hover,
 .big-next-button:hover {
     transform: translate(1px, 1px, -15deg);
-    filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-1.5px 1.5px 0 white) drop-shadow(0 1.5px 0 white) drop-shadow(0 1.5px 0 white);
+    filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-1.5px 1.5px 0 transparent) drop-shadow(0 1.5px 0 transparent) drop-shadow(0 1.5px 0 transparent);
     cursor: pointer;
 }
 .grid-prev-button:disabled,
@@ -175,9 +175,9 @@
     width: 850px;
     height: 800px;
     top: 20px;
-    left: 50%;
+    left: 48%;
     border-radius: 50%;
-    background: linear-gradient(180deg, grey 0%, white 45%, grey 47%, white 60%, pink 100%);
+    background: linear-gradient(180deg, grey 0%, white 45%, grey 47%, white 60%, #ffc0cb 100%);
     box-shadow: 6px 6px 0 black;
     transform: translateX(-50%) skewX(-15deg);
 }
@@ -203,7 +203,7 @@
 .circle-frame button:hover {
     box-shadow: 4px 4px 0 black;
     cursor: pointer;
-    filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-.1px .1px 0 white) drop-shadow(0 .1px 0 white) drop-shadow(0 .1px 0 white);
+    filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-.1px .1px 0 transparent) drop-shadow(0 .1px 0 transparent);
 }
 .circle-frame button:active {
     box-shadow: none;
@@ -276,7 +276,7 @@
 .gallery-frame-small:hover {
     /* box-shadow: 4px 4px 0 black; */
     transform: translate(1px, 1px, -15deg);
-    filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-1.5px 1.5px 0 white) drop-shadow(0 1.5px 0 white) drop-shadow(0 1.5px 0 white);
+    filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-1.5px 1.5px 0 transparent) drop-shadow(0 1.5px 0 transparent);
     cursor: pointer;
 }
 .gallery-frame-small .gallery-image {
@@ -491,7 +491,7 @@
     /* transition: box-shadow 0.1s, filter 0.2s; */
 }
 .scrapbook-frame-small:hover {
-    filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-1.5px 1.5px 0 white) drop-shadow(0 1.5px 0 white) drop-shadow(0 1.5px 0 white);
+    filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-1.5px 1.5px 0 transparent) drop-shadow(0 1.5px 0 transparent);
     cursor: pointer;
 }
 .scrapbook-frame-small .scrapbook-image {
