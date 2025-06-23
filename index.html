@@ -45,8 +45,6 @@ const cache = {
   scrapbook: null
 }
 
-
-
 // Functions
 function loadPage(page) {
   fetch(`${page}.html`)
@@ -145,22 +143,18 @@ function loadPage(page) {
           }
           break;
 
-          // case 'home':
-          //   const video = document.getElementById('circle-video');
-          //   if (video) {
-          //     video.addEventListener('loadedmetadata', () => {
-          //       const duration = video.duration;
-          //       const randomTime = Math.random() * duration;
-                
-          //       // Wait for the video to seek, then play
-          //       video.currentTime = randomTime;
+          case 'home':
+            const video = document.getElementById('home-page-video');
+            const muteButton = document.getElementById('mute-button');
 
-          //       video.addEventListener('seeked', () => {
-          //         video.play();
-          //       }, { once: true });
-          //     });
-          //   }
-          //   break;
+            if (video && muteButton) {
+              muteButton.addEventListener('click', () => {
+                video.muted = !video.muted;
+                muteButton.classList.toggle('active');
+                // muteButton.textContent = video.muted ? 'X' : ')))';
+              });
+            }
+            break;
 
 
         case 'scrapbook':
@@ -339,22 +333,6 @@ currentSong.addEventListener('ended', nextTrack);
 // Update every second
 // setInterval(updateTimeTogether, 1000);
 
-document.addEventListener('DOMContentLoaded', () => {
-  const video = document.getElementById('circle-video');
-
-  video.addEventListener('loadedmetadata', () => {
-    const duration = video.duration;
-    console.log(duration);
-    const randomTime = Math.random() * duration;
-
-    video.pause();
-    video.currentTime = randomTime;
-
-    video.addEventListener('seeked', () => {
-      video.play();
-    }, { once: true });
-  });
-});
 
 // GALLERY
 

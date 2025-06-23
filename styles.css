@@ -187,11 +187,32 @@
     opacity: 0;
     cursor: default;
 }
-
+.mute-button {
+    font-family: 'Press Start 2P', monospace;
+    position: absolute;
+    display: flex;
+    width: 70px;
+    height: 50px;
+    transform: rotate(0deg) translateX(380px) translateY(210px);
+    border-width: 8px;
+    box-shadow: 5px 5px 0 rgb(27, 27, 27);
+    background: linear-gradient(180deg, grey 0%, white 45%, grey 47%, white 60%, grey 100%);
+    border-color: rgb(199, 199, 199);
+    font-size: 16px;
+    cursor: pointer;
+    filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0.5px 0.5px 2px grey) drop-shadow(-0.5px 0.5px 0 black);
+    border-radius: 100px 100px 100px 100px;
+}
+.mute-button:hover,
+.mute-button.active {
+    filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-1.5px 1.5px 0 transparent) drop-shadow(0 1.5px 0 transparent) drop-shadow(0 1.5px 0 transparent);
+}
 
 /* HOME */
 .circle-frame {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     width: 850px;
     height: 800px;
     top: 20px;
