@@ -11,14 +11,14 @@
     <script src="https://kit.fontawesome.com/f936906ae0.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <!--Music Player Header-->
+    <!-- Music Player Header -->
     <div class="header">
       <button class='home-button' onClick="loadPage('home')"><img src="/assets/images/azw-Logo.png"></button>
       <button id='previous-track' class="music-controls"><img class='prev-next' src="/assets/images/prev.png"></button>
       <button id='play-pause-track' class="music-controls"><img class='play-pause' src="/assets/images/play.png"></button>
       <button id='next-track' class="music-controls"><img class='prev-next' src="/assets/images/next.png"></button>
       <div id="song-title-marquee" class="header-marquee">
-        <marquee id="song-title"></marquee>
+        <div id="song-title"></div>
       </div>
       <select id="playlist-select" class="header-marquee"></select>
       <div id='time-together-marquee' class="header-marquee">
@@ -44,6 +44,8 @@ const cache = {
   outfits: null, 
   scrapbook: null
 }
+
+
 
 // Functions
 function loadPage(page) {
@@ -142,6 +144,24 @@ function loadPage(page) {
               });
           }
           break;
+
+          // case 'home':
+          //   const video = document.getElementById('circle-video');
+          //   if (video) {
+          //     video.addEventListener('loadedmetadata', () => {
+          //       const duration = video.duration;
+          //       const randomTime = Math.random() * duration;
+                
+          //       // Wait for the video to seek, then play
+          //       video.currentTime = randomTime;
+
+          //       video.addEventListener('seeked', () => {
+          //         video.play();
+          //       }, { once: true });
+          //     });
+          //   }
+          //   break;
+
 
         case 'scrapbook':
           if (cache.scrapbook) {
@@ -284,40 +304,57 @@ currentSong.addEventListener('ended', nextTrack);
 // TIME TOGETHER
 
 // Variables
-const timeTogether = document.getElementById('time-together');
-const startDate = new Date("August 10, 2024 01:00:00");
+// const timeTogether = document.getElementById('time-together');
+// const startDate = new Date("August 10, 2024 01:00:00");
 
-// Functions
-function updateTimeTogether() {
-  const now = new Date();
-  let diff = now - startDate;
+// // Functions
+// function updateTimeTogether() {
+//   const now = new Date();
+//   let diff = now - startDate;
 
-  let seconds = Math.floor(diff / 1000);
-  const minutes = Math.floor(seconds / 60);
-  const hours = Math.floor(minutes / 60);
-  const days = Math.floor(hours / 24);
+//   let seconds = Math.floor(diff / 1000);
+//   const minutes = Math.floor(seconds / 60);
+//   const hours = Math.floor(minutes / 60);
+//   const days = Math.floor(hours / 24);
 
-  const years = Math.floor(days / 365.25);
-  const months = Math.floor((days % 365.25) / 30.44);
-  const remDays = Math.floor((days % 365.25) % 30.44);
+//   const years = Math.floor(days / 365.25);
+//   const months = Math.floor((days % 365.25) / 30.44);
+//   const remDays = Math.floor((days % 365.25) % 30.44);
 
-  const remHours = hours % 24;
-  const remMinutes = minutes % 60;
-  const remSeconds = seconds % 60;
+//   const remHours = hours % 24;
+//   const remMinutes = minutes % 60;
+//   const remSeconds = seconds % 60;
 
-  timeTogether.textContent = 
-    `${years} Year${years !== 1 ? 's' : ''}, ` +
-    `${months} Month${months !== 1 ? 's' : ''}, ` +
-    `${remDays} Day${remDays !== 1 ? 's' : ''}, ` +
-    `${remHours} Hour${remHours !== 1 ? 's' : ''}, ` +
-    `${remMinutes} Minute${remMinutes !== 1 ? 's' : ''}, ` +
-    `${remSeconds} Second${remSeconds !== 1 ? 's' : ''} Together`;
-}
+//   timeTogether.textContent = 
+//     `${years} Year${years !== 1 ? 's' : ''}, ` +
+//     `${months} Month${months !== 1 ? 's' : ''}, ` +
+//     `${remDays} Day${remDays !== 1 ? 's' : ''}, ` +
+//     `${remHours} Hour${remHours !== 1 ? 's' : ''}, ` +
+//     `${remMinutes} Minute${remMinutes !== 1 ? 's' : ''}, ` +
+//     `${remSeconds} Second${remSeconds !== 1 ? 's' : ''} Together`;
+// }
 
-updateTimeTogether();
+// updateTimeTogether();
 
 // Update every second
-setInterval(updateTimeTogether, 1000);
+// setInterval(updateTimeTogether, 1000);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('circle-video');
+
+  video.addEventListener('loadedmetadata', () => {
+    const duration = video.duration;
+    console.log(duration);
+    const randomTime = Math.random() * duration;
+
+    video.pause();
+    video.currentTime = randomTime;
+
+    video.addEventListener('seeked', () => {
+      video.play();
+    }, { once: true });
+  });
+});
 
 // GALLERY
 

@@ -46,7 +46,7 @@
     margin-top: -0.125rem;
     width: 2.8125rem;
     height: 2.8125rem;
-    transition: filter 0.3s ease;
+    /* transition: filter 0.3s ease; */
 }
 .home-button:hover img {
     filter: drop-shadow(0 0.1px 0 pink) drop-shadow(0 0.2px 0.2px pink) drop-shadow(0.1px 0.1px .8px pink) drop-shadow(-0.2px 0.2px 0 white) drop-shadow(0 0.1px 0 white);
@@ -54,8 +54,32 @@
 .prev-next {
     height: 1.375rem;
 }
+#song-title-marquee {
+  width: 300px;             /* or whatever width you want */
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
 #song-title {
-    width: 18.75rem;
+  display: inline-block;
+  white-space: nowrap;
+  transform: translateX(0);
+}
+
+/* Start animation on hover */
+#song-title-marquee:hover #song-title {
+  animation: scroll-left 10s linear forwards;
+  cursor: default;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 #playlist-select {
     font-family: 'Press Start 2P', monospace;
@@ -73,7 +97,7 @@
 
 /* PINK METALLIC THEME */
 .pink-metallic {
-    transition: margin 0.1s ease, box-shadow 0.1s ease, filter 0.2s ease;
+    /* transition: margin 0.1s ease, box-shadow 0.1s ease, filter 0.2s ease; */
     font-family: 'Press Start 2P', monospace;
     padding: 11px 33px;
     background: linear-gradient(180deg, grey 0%, white 45%, grey 47%, white 60%, pink 100%);
@@ -99,7 +123,6 @@
     color: pink;
     font-size: 10pt;
     filter: drop-shadow(0 1.2px 0 grey) drop-shadow(0 1.2px 1px grey) drop-shadow(0.5px 0.5px 1px transparent) drop-shadow(-0.5px 0.5px 0 transparent) drop-shadow(0 0.5px 0 transparent);
-
 }
 
 /* TOGGLE BUTTONS */
@@ -137,19 +160,16 @@
 } 
 .grid-prev-button {
     transform: translateX(-400px) skewX(-15deg);
-    transition: margin 0.1s ease, box-shadow 0.1s ease, filter 0.2s ease;
+    margin-bottom: 30px; 
 }
 .grid-next-button {
     transform: translateX(400px) skewX(-15deg);
-    transition: margin 0.1s ease, box-shadow 0.1s ease, filter 0.2s ease;
 }
 .big-prev-button {
     transform: translateY(-300px) translateX(-600px) skewX(-15deg);
-    transition: margin 0.1s ease, box-shadow 0.1s ease, filter 0.2s ease;
 }
 .big-next-button {
     transform: translateY(-300px) translateX(600px) skewX(-15deg);
-    transition: margin 0.1s ease, box-shadow 0.1s ease, filter 0.2s ease;
 }
 
 .grid-prev-button:hover,
@@ -181,6 +201,17 @@
     box-shadow: 6px 6px 0 black;
     transform: translateX(-50%) skewX(-15deg);
 }
+.circle-frame-small {
+    position: absolute;
+    width: 410px;
+    height: 30px;
+    top: 20px;
+    left: 78%;
+    border-radius: 50%;
+    background: linear-gradient(180deg, grey 0%, white 45%, grey 47%, white 60%, #ffc0cb 100%);
+    box-shadow: 6px 6px 0 black;
+    transform: translateX(-50%) skewX(-15deg);
+}
 .circle-platform { 
     position: absolute; 
     width: 850px; 
@@ -199,6 +230,7 @@
     display: flex;
     font-size: 25px;
     color: black;
+    filter: drop-shadow(0 0.5px 0 transparent) drop-shadow(0.5px 0.5px 2px grey) drop-shadow(-0.5px 0.5px 0 black);
 }
 .circle-frame button:hover {
     box-shadow: 4px 4px 0 black;
