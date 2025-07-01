@@ -13,7 +13,7 @@
   <body>
     <!-- Music Player Header -->
     <div class="header">
-      <button class='home-button' onClick="loadPage('home')"><img src="/assets/images/azw-Logo.png"></button>
+      <button class='home-button' onClick="loadPage('home')"><img src="https://files.catbox.moe/e2r3d3.png"></button>
       <button id='previous-track' class="music-controls"><img class='prev-next' src="/assets/images/prev.png"></button>
       <button id='play-pause-track' class="music-controls"><img class='play-pause' src="/assets/images/play.png"></button>
       <button id='next-track' class="music-controls"><img class='prev-next' src="/assets/images/next.png"></button>
@@ -22,7 +22,7 @@
       </div>
       <select id="playlist-select" class="header-marquee"></select>
       <div id='time-together-marquee' class="header-marquee">
-        <marquee id="time-together"></marquee>
+        <div id="time-together"></div>
       </div>
     </div>
     
@@ -277,7 +277,8 @@ fetch("/assets/mixtapes.json")
     }
 
     // Set default playlist and song title
-    const firstPlaylist = Object.keys(playlists)[0];
+    const numPlaylists = Object.keys(playlists).length;
+    const firstPlaylist = Object.keys(playlists)[numPlaylists - 1];
     if (firstPlaylist) {
       playlistSelect.value = firstPlaylist;
       track_list = playlists[firstPlaylist];
@@ -298,40 +299,40 @@ currentSong.addEventListener('ended', nextTrack);
 // TIME TOGETHER
 
 // Variables
-// const timeTogether = document.getElementById('time-together');
-// const startDate = new Date("August 10, 2024 01:00:00");
+const timeTogether = document.getElementById('time-together');
+const startDate = new Date("August 10, 2024 01:00:00");
 
 // // Functions
-// function updateTimeTogether() {
-//   const now = new Date();
-//   let diff = now - startDate;
+function updateTimeTogether() {
+  const now = new Date();
+  let diff = now - startDate;
 
-//   let seconds = Math.floor(diff / 1000);
-//   const minutes = Math.floor(seconds / 60);
-//   const hours = Math.floor(minutes / 60);
-//   const days = Math.floor(hours / 24);
+  let seconds = Math.floor(diff / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
 
-//   const years = Math.floor(days / 365.25);
-//   const months = Math.floor((days % 365.25) / 30.44);
-//   const remDays = Math.floor((days % 365.25) % 30.44);
+  const years = Math.floor(days / 365.25);
+  const months = Math.floor((days % 365.25) / 30.44);
+  const remDays = Math.floor((days % 365.25) % 30.44);
 
-//   const remHours = hours % 24;
-//   const remMinutes = minutes % 60;
-//   const remSeconds = seconds % 60;
+  const remHours = hours % 24;
+  const remMinutes = minutes % 60;
+  const remSeconds = seconds % 60;
 
-//   timeTogether.textContent = 
-//     `${years} Year${years !== 1 ? 's' : ''}, ` +
-//     `${months} Month${months !== 1 ? 's' : ''}, ` +
-//     `${remDays} Day${remDays !== 1 ? 's' : ''}, ` +
-//     `${remHours} Hour${remHours !== 1 ? 's' : ''}, ` +
-//     `${remMinutes} Minute${remMinutes !== 1 ? 's' : ''}, ` +
-//     `${remSeconds} Second${remSeconds !== 1 ? 's' : ''} Together`;
-// }
+  timeTogether.textContent = 
+    `${years} Year${years !== 1 ? 's' : ''}, ` +
+    `${months} Month${months !== 1 ? 's' : ''}, ` +
+    `${remDays} Day${remDays !== 1 ? 's' : ''}, ` +
+    `${remHours} Hour${remHours !== 1 ? 's' : ''}, ` +
+    `${remMinutes} Minute${remMinutes !== 1 ? 's' : ''}, ` +
+    `${remSeconds} Second${remSeconds !== 1 ? 's' : ''} Together`;
+}
 
-// updateTimeTogether();
+updateTimeTogether();
 
 // Update every second
-// setInterval(updateTimeTogether, 1000);
+setInterval(updateTimeTogether, 1000);
 
 
 // GALLERY

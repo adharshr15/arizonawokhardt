@@ -56,29 +56,47 @@
 }
 #song-title-marquee {
   width: 300px;             /* or whatever width you want */
+  padding-left: 6px;
   overflow: hidden;
   white-space: nowrap;
   position: relative;
 }
-
 #song-title {
   display: inline-block;
   white-space: nowrap;
   transform: translateX(0);
 }
+#time-together-marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    padding-left: 6px;
+}
 
 /* Start animation on hover */
 #song-title-marquee:hover #song-title {
-  animation: scroll-left 10s linear forwards;
-  cursor: default;
+    animation: scroll-left-song-title 6s linear forwards;
+    cursor: default;
+}
+#time-together-marquee:hover #time-together {
+    animation: scroll-left-time-together 6s linear forwards;
+    cursor: default;
 }
 
-@keyframes scroll-left {
+@keyframes scroll-left-time-together {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-145%);
+  }
+}
+@keyframes scroll-left-song-title {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-120%);
   }
 }
 #playlist-select {
@@ -191,22 +209,32 @@
     font-family: 'Press Start 2P', monospace;
     position: absolute;
     display: flex;
-    width: 70px;
-    height: 50px;
+    justify-content: center;   /* Center image horizontally */
+    align-items: center;       /* Center image vertically */
+    width: 60px;
+    height: 40px;
     transform: rotate(0deg) translateX(380px) translateY(210px);
-    border-width: 8px;
+    border-width: 6px;
     box-shadow: 5px 5px 0 rgb(27, 27, 27);
     background: linear-gradient(180deg, grey 0%, white 45%, grey 47%, white 60%, grey 100%);
     border-color: rgb(199, 199, 199);
     font-size: 16px;
     cursor: pointer;
     filter: drop-shadow(0 0.5px 0 gray) drop-shadow(0.5px 0.5px 2px grey) drop-shadow(-0.5px 0.5px 0 black);
-    border-radius: 100px 100px 100px 100px;
+    border-radius: 100px; /* same as before, but simplified */
+    padding: 0; /* remove any default padding */
 }
 .mute-button:hover,
 .mute-button.active {
     filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-1.5px 1.5px 0 transparent) drop-shadow(0 1.5px 0 transparent) drop-shadow(0 1.5px 0 transparent);
 }
+.mute-button img {
+    max-width: 80%;   /* scale image appropriately inside button */
+    max-height: 80%;
+    display: block;   /* remove whitespace from inline image */
+    pointer-events: none; /* allows clicking on the button instead of image */
+}
+
 
 /* HOME */
 .circle-frame {
