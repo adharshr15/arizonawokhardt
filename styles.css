@@ -79,7 +79,7 @@
     cursor: default;
 }
 #time-together-marquee:hover #time-together {
-    animation: scroll-left-time-together 6s linear forwards;
+    animation: scroll-left-time-together 10s linear forwards;
     cursor: default;
 }
 
@@ -88,7 +88,7 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-145%);
+    transform: translateX(-295%);
   }
 }
 @keyframes scroll-left-song-title {
