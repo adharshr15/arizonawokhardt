@@ -713,15 +713,17 @@ function prevOutfitPage() {
 function renderOutfitFrames(index) {
   const container = document.getElementById('outfits-container');
   container.innerHTML =  `
-    <div id="outfits-platform" class="pink-metallic circle-platform"></div>
-    <img src="${outfitsData[index].tayla}" class="character tayla" loading='lazy'>
-    <img src="${outfitsData[index].harsh}" class="character harsh" loading='lazy'>
-    <div id="outfits-description-frame" class="pink-metallic outfits-frame">
-        <div id="outfits-description-inner-text" class="inner-text outfits-text">
-          <h3>${outfitsData[index].title}</h3>
-          <p>${outfitsData[index].description}</p>
-          <p class='date'>${outfitsData[index].date}</p>
-        </div>
+    <div id="outfits-content">
+      <div id="outfits-platform" class="pink-metallic circle-platform"></div>
+      <img src="${outfitsData[index].tayla}" class="character tayla" loading='lazy'>
+      <img src="${outfitsData[index].harsh}" class="character harsh" loading='lazy'>
+      <div id="outfits-description-frame" class="pink-metallic outfits-frame">
+          <div id="outfits-description-inner-text" class="inner-text outfits-text">
+            <h3>${outfitsData[index].title}</h3>
+            <p>${outfitsData[index].description}</p>
+            <p class='date'>${outfitsData[index].date}</p>
+          </div>
+      </div>
     </div>
   `;
 

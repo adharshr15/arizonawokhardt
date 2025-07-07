@@ -402,9 +402,11 @@
 /* MUSIC */
 .music-container {
     font-family: 'Press Start 2P', monospace;
-    margin-left: 250px;
-    margin-right: 250px;
-    margin-top: 70px;
+    max-width: 120vw;  
+    width: 800px;  
+    margin: 70px auto 0;
+    transform: translateX(-20px);
+    box-sizing: border-box;
 }
 .music-frame-left {
     position: relative;
@@ -515,6 +517,7 @@
     left: 42%;
     transform: translate(-50%, -50%);
 }
+
 #outfits-page-select-container {
   position: fixed;
   bottom: 40px;
