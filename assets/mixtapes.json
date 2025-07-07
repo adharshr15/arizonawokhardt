@@ -66,11 +66,12 @@
         { "name": "Silence Of The Lambs - Babyteeth", "path": "https://files.catbox.moe/8uois3.wav" }
     ], 
     "Music" : [
+        { "name": "London Life - fakemink", "path": "https://files.catbox.moe/xaparp.mp3"}, 
+        { "name": "Blue Sea, Red Sea - Billie Marten", "path": "https://files.catbox.moe/tu2c2m.mp3"}, 
         { "name": "I'm Your Dirt, I'm Your Love - Yung Lean", "path": "https://files.catbox.moe/9x4px1.wav"}, 
         { "name": "Jesus, Etc. - Wilco", "path": "https://files.catbox.moe/2nklys.mp4"}, 
         { "name": "Skin & Bones - The Sundays", "path": "https://files.catbox.moe/nz7oxv.wav"}, 
         { "name": "True Love - Solange, Lil' Romeo", "path": "https://files.catbox.moe/ujihp6.wav"},
-        { "name": "Oh Boy - Cam'ron, Juelz Santana", "path": "https://files.catbox.moe/bqf5gj.wav"},
         { "name": "Music & Me - fakemink", "path": "https://files.catbox.moe/drxxz8.wav"}
     ]
 }
