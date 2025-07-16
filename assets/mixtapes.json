@@ -67,12 +67,12 @@
     ], 
     "Music" : [
         { "name": "As We Go Up, We Go Down - Guided By Voices", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1752628678/As_We_Go_Up_We_Go_Down_fqlusr.wav"}, 
-        { "name": "London Life - fakemink", "path": "https://files.catbox.moe/xaparp.mp3"}, 
-        { "name": "Blue Sea, Red Sea - Billie Marten", "path": "https://files.catbox.moe/tu2c2m.mp3"}, 
-        { "name": "I'm Your Dirt, I'm Your Love - Yung Lean", "path": "https://files.catbox.moe/9x4px1.wav"}, 
-        { "name": "Jesus, Etc. - Wilco", "path": "https://files.catbox.moe/2nklys.mp4"}, 
-        { "name": "Skin & Bones - The Sundays", "path": "https://files.catbox.moe/nz7oxv.wav"}, 
-        { "name": "True Love - Solange, Lil' Romeo", "path": "https://files.catbox.moe/ujihp6.wav"},
-        { "name": "Music & Me - fakemink", "path": "https://files.catbox.moe/drxxz8.wav"}
+        { "name": "London Life - fakemink", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1752629223/xaparp_qc73am.mp3"}, 
+        { "name": "Blue Sea, Red Sea - Billie Marten", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1752629255/tu2c2m_svmgii.mp3"}, 
+        { "name": "I'm Your Dirt, I'm Your Love - Yung Lean", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1752629335/9x4px1_eyo7b7.wav"}, 
+        { "name": "Jesus, Etc. - Wilco", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1752629360/2nklys_yhv21e.mp4"}, 
+        { "name": "Skin & Bones - The Sundays", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1752629385/nz7oxv_zpmujy.wav"}, 
+        { "name": "True Love - Solange, Lil' Romeo", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1752629437/ujihp6_kred7f.wav"},
+        { "name": "Music & Me - fakemink", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1752629468/drxxz8_fd80j8.wav"}
     ]
 }
