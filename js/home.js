@@ -34,7 +34,7 @@ function cacheData() {
 }
 
 function loadPage(page) {
-  fetch(`./${page}/${page}.html`)
+  fetch(`./${page}.html`)
     .then(res => res.text())
     .then(html => {
       document.getElementById('main-content').innerHTML = html;
