@@ -70,6 +70,7 @@ function loadPage(page) {
           break;
 
         case 'home':
+          cacheData();
           const video = document.getElementById('home-page-video');
           const muteButton = document.getElementById('mute-button');
 
