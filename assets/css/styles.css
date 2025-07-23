@@ -362,6 +362,7 @@ body {
 .gallery-frame-small {
     position: relative;
     display: flex;
+    justify-content: center;
 }
 .gallery-frame-small:hover {
     /* box-shadow: 4px 4px 0 black; */
@@ -374,6 +375,7 @@ body {
     margin-bottom: 5px;
     height: 220px;
     border-radius: 14% 6% 14% 6%;
+    max-width: calc(100% - 10px);
     filter: drop-shadow(0 0.5px 0 pink) drop-shadow(0 0.5px 0.5px pink) drop-shadow(0.5px 0.5px 2px pink) drop-shadow(-0.5px 0.5px 0 white) drop-shadow(0 0.5px 0 white);
 }
 .gallery-frame-big {
@@ -479,9 +481,9 @@ body {
     display: flex;
     flex-direction: row;
     gap: 50px;
-    margin-top: 40px;
+    margin-top: 30px;
+    margin-bottom: -40px;
     justify-content: center;
-    
     font-family: 'Press Start 2P', monospace;
 }
 .blog-page-select-container {

@@ -5,7 +5,7 @@ let galleryData = [];
 let galleryViewGrid = true;
 let currentGalleryIndex = 0;
 let currentGalleryPage = 1;
-let galleryItemsPerPage = 19;
+let galleryItemsPerPage = 18;
 
 // Functions
 function nextGalleryGridPage() {
