@@ -1,5 +1,5 @@
 {
-    "Tayla Mix 2024 - H" : [
+    "Tayla Mix 2024" : [
         { "name": "Alison - Slowdive", "path": "https://files.catbox.moe/oachk7.wav" }, 
         { "name": "The Coffin Was So Light I Thought It Might Float Away - Eiafuawn", "path": "https://files.catbox.moe/ho6g5k.wav" }, 
         { "name": "Mystery Hole - Medicine", "path": "https://files.catbox.moe/qfx90l.wav" },
@@ -21,7 +21,7 @@
         { "name": "Here, There And Everywhere - The Beatles", "path": "https://files.catbox.moe/x4phlx.wav" },
         { "name": "Kick The Tragedy - Drop Nineteens", "path": "https://files.catbox.moe/yg5m2g.wav" }
     ],
-    "Mixtape 0 - T" : [
+    "Mixtape 0" : [
         { "name": "Stuck On You - Failure", "path": "https://files.catbox.moe/swh3v7.wav" },
         { "name": "I Drive A Lot - Starflyer 59", "path": "https://files.catbox.moe/vr87j0.wav" },
         { "name": "Mystery Hole - Medicine", "path": "https://files.catbox.moe/qfx90l.wav" },
@@ -43,7 +43,7 @@
         { "name": "4L - Bootychaaain, Sickboyrari", "path": "https://files.catbox.moe/c16qjg.wav" },
         { "name": "The Boy - The Smashing Pumpkins", "path": "https://files.catbox.moe/qs7ius.wav" }
     ],
-    "Mixtape 1: 4 My Crush - T" : [
+    "Mixtape 1: 4 My Crush" : [
         { "name": "Kisses In Your Eyes - Trementina", "path": "https://files.catbox.moe/p6zp90.wav" },
         { "name": "Love Me Forever - KG", "path": "https://files.catbox.moe/vrwwxt.wav" },
         { "name": "Why I Like The Robins - Hum", "path": "https://files.catbox.moe/l1aen2.wav" },
@@ -65,6 +65,28 @@
         { "name": "The Weather - Built to Spill", "path": "https://files.catbox.moe/e4rc6b.wav" },
         { "name": "Silence Of The Lambs - Babyteeth", "path": "https://files.catbox.moe/8uois3.wav" }
     ], 
+    "Arizona Mix": [
+        {"name": "Music & Me - fakemink", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1752629468/drxxz8_fd80j8.wav"},
+        {"name": "Pony - Sports Coach", "path": ""},
+        {"name": "Macoroni Time - Chief Keef", "path": ""},
+        {"name": "whatever it takes - They Are Gutting a Body of Water", "path": ""},
+        {"name": "Droned - Starflyer 59", "path": ""},
+        {"name": "Oh Boy - Cam'ron, Juelz Santana", "path": ""},
+        {"name": "krillin - They Are Gutting a Body of Water", "path": ""},
+        {"name": "Two Fine Lovers - Sean Ono Lennon", "path": ""},
+        {"name": "Naive - Solange, Beyonce", "path": ""},
+        {"name": "Don't Ask Why - my bloody valentine", "path": ""},
+        {"name": "Face to Face - fakemink", "path": ""},
+        {"name": "World Hello - Medicine", "path": ""},
+        {"name": "These Days - Nico", "path": ""},
+        {"name": "Do You Realize?? - The Flaming Lips", "path": ""},
+        {"name": "Thank You for Being You - The Pastels", "path": ""},
+        {"name": "Ordinary World - Duran Duran", "path": ""},
+        {"name": "Forrest Gump - Frank Ocean", "path": ""},
+        {"name": "Excuse Me - A$AP Rocky", "path": ""},
+        {"name": "...& On - Erykah Badu", "path": ""},
+        {"name": "London Life - fakemink", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1752629223/xaparp_qc73am.mp3"}
+    ],
     "Music" : [
         { "name": "As We Go Up, We Go Down - Guided By Voices", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1752628678/As_We_Go_Up_We_Go_Down_fqlusr.wav"}, 
         { "name": "London Life - fakemink", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1752629223/xaparp_qc73am.mp3"}, 

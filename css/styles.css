@@ -1,3 +1,9 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* MUSIC PLAYER HEADER */
 .header{ 
     font-family: 'Press Start 2P', monospace;
@@ -330,6 +336,10 @@
 
 
 /* GALLERY */
+.gallery-container {
+    all: unset;
+    align-items: center;
+}
 .gallery-settings-container {
     margin-top: 25px;
     margin-bottom: 20px;
@@ -339,14 +349,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: 80px;
-    margin-right: 80px;
-    margin-bottom: 50px;
+    margin: 0 80px 50px 80px;
     gap: 30px;
 }
 .gallery-container-big {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-left: 150px;
     margin-right: 150px;
 }
@@ -368,7 +377,7 @@
     filter: drop-shadow(0 0.5px 0 pink) drop-shadow(0 0.5px 0.5px pink) drop-shadow(0.5px 0.5px 2px pink) drop-shadow(-0.5px 0.5px 0 white) drop-shadow(0 0.5px 0 white);
 }
 .gallery-frame-big {
-    position: relative;
+    /* position: relative; */
     display: flex;
     flex-direction: flex column;
     margin-top: 5px;
@@ -376,7 +385,7 @@
     margin-right: 20px;
     margin-bottom: -30px;
     height: 500px;
-    max-width: calc(100% - 80px);
+    max-width: calc(100% - 150px);
 }
 .gallery-frame-big .gallery-image {
     max-width: 80%;
@@ -513,11 +522,16 @@
 }
 
 /* OUTFITS */
+
 .outfits-container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
     margin-left: 150px;
     margin-right: 400px;
+    margin-bottom: 50px;
+    gap: 10px;
 }
 #outfits-page-select-container {
   position: fixed;

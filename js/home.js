@@ -88,7 +88,6 @@ function loadPage(page) {
 }
 
 
-
 // Listeners
 
 // sets initial page to home page
