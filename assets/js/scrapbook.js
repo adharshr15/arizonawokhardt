@@ -5,7 +5,7 @@ let scrapbookData = [];
 let scrapbookViewGrid = true;
 let currentScrapbookIndex = 0;
 let currentScrapbookPage = 1;
-let scrapbookItemsPerPage = 16;
+let scrapbookItemsPerPage = 20;
 
 // Functions
 function nextScrapbookGridPage() {
