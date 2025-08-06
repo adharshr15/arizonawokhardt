@@ -6,9 +6,9 @@ const cache = {
   blog: null,
   outfits: null, 
   scrapbook: null
-}
+};
 
-// Functions
+// Cache all JSON data on load
 function cacheData() {
   const fetchAndCache = (key, url, sortFn) => {
     return fetch(url)
@@ -33,13 +33,17 @@ function cacheData() {
   ]);
 }
 
+// Dynamically load HTML page into #main-content
 function loadPage(page) {
   fetch(`./${page}.html`)
-    .then(res => res.text())
+    .then(res => {
+      if (!res.ok) throw new Error(`Failed to load ${page}.html`);
+      return res.text();
+    })
     .then(html => {
       document.getElementById('main-content').innerHTML = html;
 
-      switch(page) {
+      switch (page) {
         case 'music':
           musicData = cache.music;
           renderMusicFrames(currentMusicPage);
@@ -82,18 +86,36 @@ function loadPage(page) {
           }
           break;
       }
+    })
+    .catch(err => {
+      console.error(`Error loading page "${page}":`, err);
+      document.getElementById('main-content').innerHTML = `<h2>Page not found: ${page}</h2>`;
     });
 
   window.scrollTo(0, 0);
 }
 
+// Navigate to a page and update the URL
+function navigateTo(page) {
+  loadPage(page);
 
-// Listeners
+  if (page === 'home') {
+    history.pushState({ page }, '', '/'); // Clean URL for home
+  } else {
+    location.hash = `#${page}`; // Use hash routing for others
+  }
+}
 
-// sets initial page to home page
+// Handle browser back/forward buttons
+window.addEventListener('popstate', () => {
+  const page = location.hash ? location.hash.slice(1) : 'home';
+  loadPage(page);
+});
+
+// On initial load
 window.addEventListener('DOMContentLoaded', () => {
   cacheData().then(() => {
-    const initialPage = location.hash ? location.hash.substring(1) : 'home';
-    loadPage(initialPage);
+    const page = location.hash ? location.hash.slice(1) : 'home';
+    loadPage(page);
   });
 });
