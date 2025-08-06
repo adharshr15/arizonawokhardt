@@ -355,10 +355,9 @@ body {
 }
 .gallery-container-big {
     display: flex;
+    height: 72vh;
     justify-content: center;
     align-items: center;
-    margin-left: 150px;
-    margin-right: 150px;
 }
 .gallery-frame-small {
     position: relative;
@@ -388,7 +387,7 @@ body {
     margin-right: 20px;
     margin-bottom: -30px;
     height: 500px;
-    max-width: calc(100% - 150px);
+    max-width: 75%;
 }
 .gallery-frame-big .gallery-image {
     max-width: 80%;
@@ -603,9 +602,9 @@ body {
 }
 .scrapbook-container-big {
     display: flex;
+    height: 72vh;
     justify-content: center;
-    margin-left: 150px;
-    margin-right: 150px;
+    align-items: center;
 }
 .scrapbook-frame-small {
     position: relative;
@@ -633,6 +632,7 @@ body {
     height: 500px;
     max-width: calc(100% - 80px); */
     position: relative;
+    align-items: center;
     width: 330px;
     height: 450px;
     margin: 30px -30px 0px 130px;
