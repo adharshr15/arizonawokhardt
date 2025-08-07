@@ -102,7 +102,7 @@ function navigateTo(page) {
   if (page === 'home') {
     history.pushState({ page }, '', '/'); // Clean URL for home
   } else {
-    location.hash = `#${page}`; // Use hash routing for others
+    location.hash = `${page}`; // Use hash routing for others
   }
 }
 

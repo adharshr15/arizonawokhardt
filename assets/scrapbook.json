@@ -1,13 +1,8 @@
 [
     {
-        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1754358312/postcard_krepcj.png",
+        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1754508933/postcard_u5xrvw.png",
         "title": "Postcard",
         "description": "u sent me this postcard you got in galveston, i love you <333"
-    },
-    {
-        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1754358318/panera_hat_ih6dmu.png",
-        "title": "Panera Hat",
-        "description": "u gave me this hat the first time we hung out because you got nervous when i was in my room so u just started giving me things lmaoo"
     },
     {
         "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753109868/tayla_drawing_bladhm.png",
@@ -15,14 +10,9 @@
         "description": "u drew this of me in the unit one day before practice"
     },
     {
-        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753108076/cupcake_ring_zisfex.png",
-        "title": "Cupcake Ring",
-        "description": "this was on a cupcake you made and gave to me"
-    },
-    {
-        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753107876/elephant1_hwso4v.png",
-        "title": "Elephant",
-        "description": "u stole this for me from the toy shop in nb"
+        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753106100/grimace_yjnvpc.png",
+        "title": "Grimace",
+        "description": "when we got the mcdonalds minecraft meal bc chris caught us walking home and told us we should and give him the hamburgler if we got it"
     },
     {
         "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753107277/flowers1_x0tbad.png",
@@ -30,9 +20,64 @@
         "description": "u picked these for me while you were walking back from a party with your friends"
     },
     {
+        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753196464/elephant2_ucpcek.png",
+        "title": "Elephant",
+        "description": "you got this for me when u went on that cruise over spring break"
+    },
+    {
+        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753115208/500daysCD_tn3uga.png",
+        "title": "500 Days of Summer Soundtrack",
+        "description": "you tweeted that when you found your soulmate you would give them this soundtrack"
+    },
+    {
         "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753107447/tayla_nametag_dz6cpq.png",
         "title": "Nametag",
         "description": "u gave me this and i wore it at the rio market show in austin"
+    },
+    {
+        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753110267/heel_zine_ns656s.png",
+        "title": "Heel Zine",
+        "description": "u made this heel zine, it turned out so good :P"
+    },
+    {
+        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753108076/cupcake_ring_zisfex.png",
+        "title": "Cupcake Ring",
+        "description": "this was on a cupcake you made and gave to me"
+    },
+    {
+        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753106097/candle_mvwvbz.png",
+        "title": "Candle",
+        "description": "u got me this candle for christmas, everytime i smell it now i think of us in my room"
+    },
+    {
+        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753106807/discman_jihljo.png",
+        "title": "Discman",
+        "description": "u let me borrow this to listen to the mixes you made me, and the medicine cd :D"
+    },
+    {
+        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753105893/skeleton_a1jpqy.png",
+        "title": "Skeleton",
+        "description": "we got this skeleton after the skatepark show from the merch stand"
+    },
+    {
+        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753107876/elephant1_hwso4v.png",
+        "title": "Elephant",
+        "description": "u stole this for me from the toy shop in nb"
+    },
+    {
+        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753106098/tayla_clip_o8dgdl.png",
+        "title": "Tayla Hair Clip",
+        "description": "u left this in my bathroom after the first kanm function we went to and i kept it in various places in my room since then"
+    },
+    {
+        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753106101/tayla_gun_g0gvmg.png",
+        "title": "Tayla Gun",
+        "description": "we used those weird puzzle piece blocks nick's mom gave me to make these things on the first day of school while we ate pb&j's, mine broke :("
+    },
+    {
+        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1754358318/panera_hat_ih6dmu.png",
+        "title": "Panera Hat",
+        "description": "u gave me this hat the first time we hung out because you got nervous when i was in my room so u just started giving me things lmaoo"
     },
     {
         "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753196900/pick_unyhob.png",
@@ -43,51 +88,5 @@
         "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753664437/heel_napkin_y1aknu.png",
         "title": "Heel Napkin",
         "description": "u drew these at work and then gave them to me when you came to my garage to get my guitar pedals"
-    },
-    {
-        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753106807/discman_jihljo.png",
-        "title": "Discman",
-        "description": "u let me borrow this to listen to the mixes you made me, and the medicine cd :D"
-    },
-    {
-        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753110267/heel_zine_ns656s.png",
-        "title": "Heel Zine",
-        "description": "u made this heel zine, it turned out so good :P"
-    },
-    {
-        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753105893/skeleton_a1jpqy.png",
-        "title": "Skeleton",
-        "description": "we got this skeleton after the skatepark show from the merch stand"
-    },
-    {
-        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753106097/candle_mvwvbz.png",
-        "title": "Candle",
-        "description": "u got me this candle for christmas, everytime i smell it now i think of us in my room"
-    },
-    {
-        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753106098/tayla_clip_o8dgdl.png",
-        "title": "Tayla Hair Clip",
-        "description": "u left this in my bathroom after the first kanm function we went to and i kept it in various places in my room since then"
-    },
-    {
-        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753196464/elephant2_ucpcek.png",
-        "title": "Elephant",
-        "description": "you got this for me when u went on that cruise over spring break"
-    },
-    {
-        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753106101/tayla_gun_g0gvmg.png",
-        "title": "Tayla Gun",
-        "description": "we used those weird puzzle piece blocks nick's mom gave me to make these things on the first day of school while we ate pb&j's, mine broke :("
-    },
-    {
-        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753115208/500daysCD_tn3uga.png",
-        "title": "500 Days of Summer Soundtrack",
-        "description": "you tweeted that when you found your soulmate you would give them this soundtrack"
-    },
-    {
-        "path": "https://res.cloudinary.com/dscyj4wpt/image/upload/v1753106100/grimace_yjnvpc.png",
-        "title": "Grimace",
-        "description": "when we got the mcdonalds minecraft meal bc chris caught us walking home and told us we should and give him the hamburgler if we got it"
     }
-    
 ]
