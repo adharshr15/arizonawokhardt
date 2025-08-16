@@ -23,8 +23,3 @@ jobs:
           api_token: ${{ secrets.NEOCITIES_API_KEY }}
           cleanup: true
           dist_dir: .
-          exclude: |
-            .github/**
-            *.md
-            LICENSE
-            .gitignore
