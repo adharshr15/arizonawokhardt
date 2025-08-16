@@ -26,11 +26,11 @@ function playPauseTrack() {
   if (isPlaying) {
     currentSong.pause();
     isPlaying = !isPlaying;
-    playPauseTrackButton.innerHTML = '<img src="/assets/images/play.png">';
+    playPauseTrackButton.innerHTML = '<img src="./assets/images/play.png">';
   } else {
     currentSong.play();
     isPlaying = !isPlaying;
-    playPauseTrackButton.innerHTML = '<img src="/assets/images/pause.png">';
+    playPauseTrackButton.innerHTML = '<img src="./assets/images/pause.png">';
   }
 }
 
@@ -42,7 +42,7 @@ function nextTrack() {
   }
   loadTrack(track_index);
   currentSong.play();
-  playPauseTrackButton.innerHTML = '<img src="/assets/images/pause.png">';
+  playPauseTrackButton.innerHTML = '<img src="./assets/images/pause.png">';
   isPlaying = true;
 }
 
@@ -52,7 +52,7 @@ function previousTrack() {
   } 
   loadTrack(track_index);
   currentSong.play();
-  playPauseTrackButton.innerHTML = '<img src="/assets/images/pause.png">';
+  playPauseTrackButton.innerHTML = '<img src="./assets/images/pause.png">';
   isPlaying = true;
 }
 
@@ -66,7 +66,7 @@ function changePlaylist() {
 }
 
 
-fetch("/assets/mixtapes.json")
+fetch("./assets/mixtapes.json")
   .then(response => response.json())
   .then(data => {
     playlists = data;
