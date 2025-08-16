@@ -2,7 +2,7 @@
 
 // Variables
 const timeTogether = document.getElementById('time-together');
-const startDate = new Date("August 10, 2024 01:00:00");
+const startDate = new Date("August 10, 2024 04:10:00");
 
 // // Functions
 function updateTimeTogether() {

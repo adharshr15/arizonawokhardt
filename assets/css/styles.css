@@ -140,7 +140,6 @@ body {
     line-height: 2.5vh;
     box-shadow: inset 4px 4px 10px grey; 
     border-radius: 14% 6% 14% 6%;
-    filter: drop-shadow(0 0.5px 0 pink) drop-shadow(0 0.5px 0.5px pink) drop-shadow(0.5px 0.5px 2px pink) drop-shadow(-0.5px 0.5px 0 white) drop-shadow(0 0.5px 0 white);
 }
 .date {
     z-index: 999;
