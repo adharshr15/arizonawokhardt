@@ -20,7 +20,7 @@ jobs:
       - name: mirror ts 
         run: |
           mkdir deploy-root
-          rsync -av --exclude+'.github' ./ ./deploy-root
+          rsync -av --exclude='.github' ./ ./deploy-root
       - name: Deploy to neocities
         uses: bcomnes/deploy-to-neocities@v1
         with:
