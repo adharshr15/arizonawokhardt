@@ -25,7 +25,6 @@ jobs:
             cleanup: true
             dist_dir: .
             exclude: |
-              .github/**
               *.md
               LICENSE
               .gitignore
