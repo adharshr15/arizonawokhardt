@@ -20,11 +20,11 @@ jobs:
       - name: Deploy to neocities
         uses: bcomnes/deploy-to-neocities@v1
         with:
-          with:
-            api_token: ${{ secrets.NEOCITIES_API_KEY }}
-            cleanup: true
-            dist_dir: .
-            exclude: |
-              *.md
-              LICENSE
-              .gitignore
+          api_token: ${{ secrets.NEOCITIES_API_KEY }}
+          cleanup: true
+          dist_dir: .
+          exclude: |
+            .github/**
+            *.md
+            LICENSE
+            .gitignore
