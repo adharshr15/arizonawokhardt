@@ -17,13 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       # When the dist_dir is ready, deploy it to neocities
-      - name: mirror ts 
-        run: |
-          mkdir deploy-root
-          rsync -av --exclude='.github' ./ ./deploy-root
       - name: Deploy to neocities
         uses: bcomnes/deploy-to-neocities@v1
         with:
           api_token: ${{ secrets.NEOCITIES_API_KEY }}
           cleanup: true
-          dist_dir: .
+          dist_dir: public

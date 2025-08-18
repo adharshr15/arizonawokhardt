@@ -25,11 +25,11 @@ function cacheData() {
   };
 
   return Promise.all([
-    fetchAndCache('music', '/assets/music.json', (a, b) => new Date(b.date) - new Date(a.date)),
-    fetchAndCache('gallery', '/assets/gallery.json', (a, b) => new Date(b.date) - new Date(a.date)),
-    fetchAndCache('blog', '/assets/blog.json', (a, b) => new Date(b.date) - new Date(a.date)),
-    fetchAndCache('outfits', '/assets/outfits.json', (a, b) => new Date(a.date) - new Date(b.date)), // ascending
-    fetchAndCache('scrapbook', '/assets/scrapbook.json', (a, b) => new Date(b.date) - new Date(a.date))
+    fetchAndCache('music', './assets/music.json', (a, b) => new Date(b.date) - new Date(a.date)),
+    fetchAndCache('gallery', './assets/gallery.json', (a, b) => new Date(b.date) - new Date(a.date)),
+    fetchAndCache('blog', './assets/blog.json', (a, b) => new Date(b.date) - new Date(a.date)),
+    fetchAndCache('outfits', './assets/outfits.json', (a, b) => new Date(a.date) - new Date(b.date)), // ascending
+    fetchAndCache('scrapbook', './assets/scrapbook.json', (a, b) => new Date(b.date) - new Date(a.date))
   ]);
 }
 
