@@ -87,6 +87,23 @@
         {"name": "...& On - Erykah Badu", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1753415109/__On_kbxm76.mp3"},
         {"name": "Sleep Away Your Troubles - The Softies", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1753665429/Sleep_Away_Your_Troubles_axmqee.mp3"}
     ],
+    "Harsh22!": [
+        {"name": "Day Dreaming - Aretha Franklin", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759474672/aretha_franklin_-_day_dreaming_official_audio_hido8t.wav"},
+        {"name": "Spaceboy [Acoustic] - The Smashing Pumpkins", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759474628/spaceboy_acoustic_vd4ncf.wav"},
+        {"name": "You Can Have It All - Yo La Tengo", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759474614/you_can_have_it_all_ob95uv.wav"},
+        {"name": "Crystallized - Melody's Echo Chamber", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759474661/melodys_echo_chamber_-_crystallized_official_audio_t4gbwl.wav"},
+        {"name": "Agatka (Agatha! You're Being Melodramatic!) - Weatherday", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759474638/agatka_agatha__youre_being_melodramatic_yr0eoh.wav"},
+        {"name": "Spoon - Boris", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759474555/spoon_ubibm6.wav"},
+        {"name": "Heroes - David Bowie", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759474396/heroes_2017_remaster_sbau1d.wav"},
+        {"name": "Make It Forever - George Clanton", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759474421/george_clanton_-_make_it_forever_gtkafz.wav"},
+        {"name": "Snowfall - The Halo Benders", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759474559/snowfall_vlbjf7.wav"},
+        {"name": "I Love You Like the Way That I Used to Do - Rocketship", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759474661/i_love_you_like_the_way_that_i_used_to_do_mbrvkx.wav"},
+        {"name": "whatever it takes - They Are Gutting a Body of Water", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759474039/whatever_it_takes_fqj77f.wav"},
+        {"name": "Crazy for You [Alternative Version [Demo]] - Slowdive", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759474638/slowdive_-_crazy_for_you_alternative_version_demo_version_-_official_audio_niop4o.wav"},
+        {"name": "Silhouette - Elusin", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759474324/elusin_-_silhouette_jtcbqv.wav"},
+        {"name": "Copper and Stars - Planes Mistaken For Stars", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759474395/copper_and_stars_biwqzg.wav"},
+        {"name": "Fell in Love (At the Water)", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759475863/fell_in_love_at_the_water_dpktll.wav"}
+    ],
     "Music" : [
         { "name": "Get MuNNY - Erykah Badu", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759106855/Get_MuNNY_axb7ra.mp3"},
         { "name": "Ashes to Ashes - David Bowie", "path": "https://res.cloudinary.com/dscyj4wpt/video/upload/v1759106860/Ashes_to_Ashes_2017_Remaster_e1dddy.mp3"},
