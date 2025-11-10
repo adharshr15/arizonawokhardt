@@ -416,6 +416,9 @@ body {
     transform: translateX(-20px);
     box-sizing: border-box;
 }
+.music-container-selected {
+    filter: drop-shadow(0 1.5px 0 rgb(255, 216, 222)) drop-shadow(0 1.5px 0.5px rgb(255, 216, 222)) drop-shadow(1.5px 1.5px 1px rgb(255, 216, 222)) drop-shadow(-.1px .1px 0 transparent) drop-shadow(0 .1px 0 transparent);
+}
 .music-frame-left {
     position: relative;
     left: -15%;

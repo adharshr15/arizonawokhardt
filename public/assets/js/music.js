@@ -33,6 +33,7 @@ function playMusicFromFrame(index) {
   playPauseTrackButton.innerHTML = '<img src="/assets/images/pause.png">';
   isPlaying = true;
 }
+
 function renderMusicFrames(page) {
     const container = document.getElementById('music-container');
     container.innerHTML = '';
